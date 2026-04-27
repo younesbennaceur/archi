@@ -6,7 +6,7 @@ import Services from '../components/Services.jsx'
 import Team from '../components/Team.jsx'
 import Avis from '../components/Avis.jsx'
 import Cta from '../components/Cta.jsx'
-import CertificationQualiopi from '../components/pdf.jsx'
+import CertificationQualiopi from '../components/CertificationQualiopi.jsx';
 
 export default function Home() {
   return (
