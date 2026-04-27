@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { GraduationCap, Plus, Rocket } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const cards = [
   {
@@ -82,12 +83,12 @@ export default function WhyUs() {
               <p className="mt-4 text-slate-600 text-sm leading-relaxed">{c.body}</p>
               
               {/* Utilisation de <a> pour garantir le scroll croisé entre pages */}
-              <a
-                href={c.link}
+              <Link
+                to={c.link}
                 className="mt-6 inline-flex items-center gap-1 font-semibold text-[color:var(--color-accent)] hover:gap-2 transition-all"
               >
                 {c.cta} →
-              </a>
+              </Link>
             </motion.div>
           ))}
         </div>
