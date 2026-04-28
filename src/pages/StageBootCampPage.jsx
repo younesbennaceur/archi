@@ -75,11 +75,11 @@ export default function StageBootCampPage() {
       <section className="relative overflow-hidden bg-slate-900 text-white">
         <div className="absolute inset-0 -z-0">
           <img 
-            src="/images/cover-bootcamp.jpg" 
-            alt="Stage intensif Boot Camp Architecture" 
-            className="h-full w-full object-cover opacity-30" 
+            src="https://www.pariszigzag.fr/wp-content/uploads/2023/11/CITE-UNIVERSITAIRE-6-PARIS-ZIGZAG.jpg" 
+            alt="Architecture Cité Universitaire - Stage intensif" 
+            className="h-full w-full object-cover opacity-40 mix-blend-overlay" 
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-slate-900/40" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 pb-20">
@@ -157,6 +157,30 @@ export default function StageBootCampPage() {
                   </li>
                 </ul>
               </nav>
+
+              {/* NOUVEAU BLOC : L'inspiration architecturale CIUP */}
+              <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col md:flex-row gap-8 items-center">
+                <div className="w-full md:w-1/2">
+                   <h3 className="text-2xl font-black text-slate-900 mb-4 leading-tight">Un cadre immersif pour votre stage intensif</h3>
+                   <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                     Le Boot Camp se déroule au cœur du 14e arrondissement, à quelques pas de la <strong>Cité Internationale Universitaire de Paris</strong>. 
+                   </p>
+                   <p className="text-slate-600 text-sm leading-relaxed">
+                     Ce véritable musée d'architecture à ciel ouvert est le terrain de jeu idéal pour vos exercices de croquis en extérieur et pour forger vos références architecturales lors de cette semaine décisive.
+                   </p>
+                </div>
+                <div className="w-full md:w-1/2 relative h-64 rounded-2xl overflow-hidden shadow-inner">
+                  <img 
+                    src="https://www.pariszigzag.fr/wp-content/uploads/2023/11/CITE-UNIVERSITAIRE-6-PARIS-ZIGZAG.jpg" 
+                    alt="Cité Universitaire de Paris" 
+                    className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent pointer-events-none" />
+                  <span className="absolute bottom-4 left-4 text-white text-xs font-medium px-2 py-1 bg-black/40 backdrop-blur-md rounded-md">
+                     Croquis & Inspiration à la Cité U
+                  </span>
+                </div>
+              </div>
 
               {/* OBJECTIFS */}
               <div id="objectifs" className="scroll-mt-10 space-y-8">
@@ -320,40 +344,64 @@ export default function StageBootCampPage() {
                     <div>
                       <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Lieu</p>
                       <p className="text-slate-900 font-medium leading-relaxed">
-                        Les stages se déroulent à Paris, au sein de notre école.
+                        Les stages se déroulent à Paris, au sein de notre école ou en distanciel selon la session choisie.
                       </p>
                     </div>
                   </div>
                   
                   <div className="space-y-4">
+                    {/* Toussaint 2026 */}
                     <div>
-                      <p className="text-sm font-bold text-[color:var(--color-accent,orange)] uppercase tracking-wider mb-2">Vacances de Noël 2024</p>
+                      <p className="text-sm font-bold text-[color:var(--color-accent,orange)] uppercase tracking-wider mb-2">Toussaint 2026</p>
                       <ul className="space-y-2 text-sm text-slate-700">
                         <li className="flex items-start gap-2">
                           <span className="w-1 h-1 rounded-full bg-slate-400 mt-2 shrink-0" />
-                          <span>Semaine du lundi 30 décembre 2024 au samedi 4 janvier 2025 (pas de cours le mercredi 1er janvier)</span>
+                          <span>19 au 23 octobre 2026 (Présentiel & Distanciel - Zones A, B, C)</span>
                         </li>
                       </ul>
                     </div>
 
+                    {/* Noël 2026 */}
                     <div className="pt-2">
-                      <p className="text-sm font-bold text-[color:var(--color-accent,orange)] uppercase tracking-wider mb-2">Vacances d’Hiver 2025</p>
+                      <p className="text-sm font-bold text-[color:var(--color-accent,orange)] uppercase tracking-wider mb-2">Noël 2026</p>
                       <ul className="space-y-2 text-sm text-slate-700">
                         <li className="flex items-start gap-2">
                           <span className="w-1 h-1 rounded-full bg-slate-400 mt-2 shrink-0" />
-                          <span>Semaine du lundi 10 février au samedi 15 février 2025</span>
+                          <span>28 déc. 2026 au 2 janv. 2027 (Distanciel - Zones A, B, C | Pas de cours le 1er janv.)</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* Hiver 2027 Présentiel */}
+                    <div className="pt-2">
+                      <p className="text-sm font-bold text-[color:var(--color-accent,orange)] uppercase tracking-wider mb-2">Hiver 2027 (Présentiel)</p>
+                      <ul className="space-y-2 text-sm text-slate-700">
+                        <li className="flex items-start gap-2">
+                          <span className="w-1 h-1 rounded-full bg-slate-400 mt-2 shrink-0" />
+                          <span>8 au 12 février 2027 (Zone C)</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="w-1 h-1 rounded-full bg-slate-400 mt-2 shrink-0" />
-                          <span>Semaine du lundi 17 février au samedi 22 février 2025</span>
+                          <span>15 au 19 février 2027 (Zones A, C)</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="w-1 h-1 rounded-full bg-slate-400 mt-2 shrink-0" />
-                          <span>Semaine du lundi 24 février au samedi 1er mars 2025</span>
+                          <span>22 au 26 février 2027 (Zones A, B)</span>
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* Hiver 2027 Distanciel */}
+                    <div className="pt-2">
+                      <p className="text-sm font-bold text-[color:var(--color-accent,orange)] uppercase tracking-wider mb-2">Hiver 2027 (Distanciel)</p>
+                      <ul className="space-y-2 text-sm text-slate-700">
+                        <li className="flex items-start gap-2">
+                          <span className="w-1 h-1 rounded-full bg-slate-400 mt-2 shrink-0" />
+                          <span>15 au 19 février 2027 (Zones A, C)</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="w-1 h-1 rounded-full bg-slate-400 mt-2 shrink-0" />
-                          <span>Semaine du lundi 3 mars au samedi 8 mars 2025</span>
+                          <span>22 au 26 février 2027 (Zones A, B)</span>
                         </li>
                       </ul>
                     </div>

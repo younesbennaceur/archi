@@ -25,7 +25,7 @@ export default function Pedagogy() {
             Construisez les fondations de votre parcours.
           </h2>
           <p className="mt-6 text-slate-600 text-lg max-w-lg">
-            La Prépa ArchiPrep vous aide à baliser votre parcours d'études « en fonction de votre profil » vers les voies, écoles, passerelles et concours pour devenir architecte avec
+            La Prépa MonArchi vous aide à baliser votre parcours d'études « en fonction de votre profil » vers les voies, écoles, passerelles et concours pour devenir architecte avec
           </p>
           <span className="mt-4 inline-block rounded-md bg-[color:var(--color-accent-soft)] px-3 py-1 font-bold text-[color:var(--color-accent)]">
             100 % de réussite

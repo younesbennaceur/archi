@@ -51,11 +51,8 @@ const AccordionItem = ({ title, intro, content }) => {
 export default function PrepaTempsCompletPage() {
   const location = useLocation();
 
-  // Ce useEffect s'assure que la page scrolle vers l'ancre demandée
-  // même si on vient d'une autre page.
   useEffect(() => {
     if (location.hash) {
-      // On ajoute un léger délai pour s'assurer que le DOM est bien rendu avant de scroller
       setTimeout(() => {
         const id = location.hash.replace('#', '');
         const element = document.getElementById(id);
@@ -64,7 +61,6 @@ export default function PrepaTempsCompletPage() {
         }
       }, 100);
     } else {
-      // S'il n'y a pas de hash, on scrolle en haut de la page par défaut
       window.scrollTo(0, 0);
     }
   }, [location]);
@@ -77,15 +73,15 @@ export default function PrepaTempsCompletPage() {
         path="/services/prepa-plein-temps"
       />
 
-      {/* HERO SECTION */}
+      {/* HERO SECTION avec l'image de la Cité Universitaire */}
       <section className="relative overflow-hidden bg-slate-900 text-white">
         <div className="absolute inset-0 -z-0">
           <img 
-            src="/images/cover-prepa-temps-complet.jpg" 
-            alt="Prépa architecture plein temps" 
-            className="h-full w-full object-cover opacity-30" 
+            src="https://www.pariszigzag.fr/wp-content/uploads/2023/11/CITE-UNIVERSITAIRE-5-PARIS-ZIZGAG.jpg" 
+            alt="Cité Internationale Universitaire de Paris" 
+            className="h-full w-full object-cover opacity-40 mix-blend-overlay" 
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-slate-900/40" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 pb-20">
@@ -93,23 +89,21 @@ export default function PrepaTempsCompletPage() {
             <ArrowLeft size={16} /> Toutes les formations
           </Link>
 
-        
-           <motion.h1
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] max-w-5xl"
-                    >
-                      La prépa à plein temps :
-                    </motion.h1>
-                    <motion.p
-                       initial={{ opacity: 0, y: 20 }}
-                       animate={{ opacity: 1, y: 0 }}
-                       transition={{ delay: 0.1 }}
-                       className="mt-6 text-2xl text-[color:var(--color-accent,orange)] font-bold tracking-wide"
-                    >
-                      la voie la plus sûre pour réussir à devenir architecte
-                    </motion.p>
-          
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mt-8 text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] max-w-5xl"
+          >
+            La prépa à plein temps :
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="mt-6 text-2xl text-[color:var(--color-accent,orange)] font-bold tracking-wide"
+          >
+            la voie la plus sûre pour réussir à devenir architecte
+          </motion.p>
         </div>
       </section>
 
@@ -121,7 +115,7 @@ export default function PrepaTempsCompletPage() {
             {/* COLONNE GAUCHE (Sommaire + Texte détaillé) */}
             <div className="lg:col-span-2 space-y-16">
               
-              {/* NOUVEAU SOMMAIRE UX */}
+              {/* SOMMAIRE UX */}
               <nav className="bg-slate-50 border border-slate-200 p-8 rounded-3xl shadow-sm">
                 <h2 className="text-sm font-black text-slate-400 uppercase tracking-wider mb-6 flex items-center gap-2">
                   <List size={18} /> Au sommaire de cette page
@@ -165,6 +159,31 @@ export default function PrepaTempsCompletPage() {
                   </li>
                 </ul>
               </nav>
+
+              {/* SECTION: CADRE D'ÉTUDE (Intégration de l'image de la Cité U) */}
+              <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col md:flex-row gap-8 items-center">
+                <div className="w-full md:w-1/2">
+                   <h3 className="text-2xl font-black text-slate-900 mb-4 leading-tight">Un cadre d'étude exceptionnel au cœur du 14e arrondissement</h3>
+                   <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                     Notre école est située à proximité immédiate de la <strong>Cité Internationale Universitaire de Paris (CIUP)</strong>. Cet environnement unique offre à nos étudiants un musée d'architecture à ciel ouvert, idéal pour nourrir leur culture architecturale et s'exercer au croquis sur le vif.
+                   </p>
+                   <p className="text-slate-600 text-sm leading-relaxed">
+                     Du Pavillon Suisse de Le Corbusier au Collège Néerlandais, la diversité des styles architecturaux de la CIUP constitue une source d'inspiration inépuisable tout au long de votre année préparatoire.
+                   </p>
+                </div>
+                <div className="w-full md:w-1/2 relative h-64 rounded-2xl overflow-hidden shadow-inner">
+                  <img 
+                    src="https://www.pariszigzag.fr/wp-content/uploads/2023/11/CITE-UNIVERSITAIRE-5-PARIS-ZIZGAG.jpg" 
+                    alt="Fondation Deutsch de la Meurthe, Cité Universitaire" 
+                    className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent pointer-events-none" />
+                  <span className="absolute bottom-4 left-4 text-white text-xs font-medium px-2 py-1 bg-black/40 backdrop-blur-md rounded-md">
+                     Cité Internationale Universitaire
+                  </span>
+                </div>
+              </div>
+
 
               {/* OBJECTIFS & PROGRAMME */}
               <div id="objectifs" className="scroll-mt-10 space-y-10">
@@ -216,7 +235,7 @@ export default function PrepaTempsCompletPage() {
                     <h3 className="text-2xl font-bold mb-5 flex items-center gap-2"><BookOpen size={24} className="text-[color:var(--color-accent,orange)]" /> Les épreuves préparées</h3>
                     <ul className="grid sm:grid-cols-2 gap-4 text-white/90">
                       <li className="flex items-start gap-2"><Check size={18} className="text-[color:var(--color-accent,orange)] shrink-0 mt-1" /> L’entretien de motivation</li>
-                      <li className="flex items-start gap-2"><Check size={18} className="text-[color:var(--color-accent,orange)] shrink-0 mt-1" /> Le dossier artistique personnel (book), dont le contenu sera orienté selon l’école visée (par exemple, mise en avant des acquis en design et architecture d’intérieur si pertinent)</li>
+                      <li className="flex items-start gap-2"><Check size={18} className="text-[color:var(--color-accent,orange)] shrink-0 mt-1" /> Le dossier artistique personnel (book), dont le contenu sera orienté selon l’école visée</li>
                       <li className="flex items-start gap-2"><Check size={18} className="text-[color:var(--color-accent,orange)] shrink-0 mt-1" /> Le dossier de candidature (CV et lettres de motivation)</li>
                       <li className="flex items-start gap-2"><Check size={18} className="text-[color:var(--color-accent,orange)] shrink-0 mt-1" /> Les épreuves de design volume</li>
                       <li className="flex items-start gap-2"><Check size={18} className="text-[color:var(--color-accent,orange)] shrink-0 mt-1" /> Les épreuves d’observation, de description et d’expression plastique liées à un site</li>

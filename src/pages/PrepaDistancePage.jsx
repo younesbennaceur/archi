@@ -74,15 +74,15 @@ export default function PrepaDistancePage() {
         path="/services/prepa-distance"
       />
 
-      {/* HERO SECTION */}
+      {/* HERO SECTION avec la photo Cité U demandée */}
       <section className="relative overflow-hidden bg-slate-900 text-white">
         <div className="absolute inset-0 -z-0">
           <img 
-            src="/images/cover-prepa-distance.jpg" 
-            alt="Prépa architecture à distance" 
-            className="h-full w-full object-cover opacity-30" 
+            src="https://media.timeout.com/images/106009567/1024/576/image.webp" 
+            alt="Architecture Cité Universitaire" 
+            className="h-full w-full object-cover opacity-40 mix-blend-overlay" 
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-slate-900/40" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 pb-20">
@@ -90,22 +90,21 @@ export default function PrepaDistancePage() {
             <ArrowLeft size={16} /> Toutes les formations
           </Link>
 
-         
-           <motion.h1
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] max-w-5xl"
-                    >
-                       Prépa à distance 
-                    </motion.h1>
-                    <motion.p
-                       initial={{ opacity: 0, y: 20 }}
-                       animate={{ opacity: 1, y: 0 }}
-                       transition={{ delay: 0.1 }}
-                       className="mt-6 text-2xl text-[color:var(--color-accent,orange)] font-bold tracking-wide"
-                    >
-                      constituez une candidature aux ENSA de qualité, depuis chez vous
-                    </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mt-8 text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] max-w-5xl"
+          >
+            Prépa à distance 
+          </motion.h1>
+          <motion.p
+             initial={{ opacity: 0, y: 20 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ delay: 0.1 }}
+             className="mt-6 text-2xl text-[color:var(--color-accent,orange)] font-bold tracking-wide"
+          >
+            constituez une candidature aux ENSA de qualité, depuis chez vous
+          </motion.p>
         </div>
       </section>
 
@@ -152,6 +151,30 @@ export default function PrepaDistancePage() {
                   </li>
                 </ul>
               </nav>
+
+              {/* NOUVEAU BLOC : L'inspiration architecturale même à distance */}
+              <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col md:flex-row gap-8 items-center">
+                <div className="w-full md:w-1/2">
+                   <h3 className="text-2xl font-black text-slate-900 mb-4 leading-tight">La culture architecturale, jusqu'à chez vous</h3>
+                   <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                     Même à distance, nous avons à cœur de vous transmettre l'essence de l'architecture. Nos cours d'histoire et nos analyses prennent appui sur des exemples forts, comme l'incroyable diversité des pavillons de la <strong>Cité Internationale Universitaire de Paris</strong>.
+                   </p>
+                   <p className="text-slate-600 text-sm leading-relaxed">
+                     L'objectif est d'éduquer votre regard pour que vous puissiez analyser et dessiner l'architecture de votre propre région avec le même niveau d'exigence.
+                   </p>
+                </div>
+                <div className="w-full md:w-1/2 relative h-64 rounded-2xl overflow-hidden shadow-inner">
+                  <img 
+                    src="https://media.timeout.com/images/106009567/1024/576/image.webp" 
+                    alt="Fondation Deutsch de la Meurthe, Cité Universitaire" 
+                    className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent pointer-events-none" />
+                  <span className="absolute bottom-4 left-4 text-white text-xs font-medium px-2 py-1 bg-black/40 backdrop-blur-md rounded-md">
+                     S'inspirer des plus grands lieux d'architecture
+                  </span>
+                </div>
+              </div>
 
               {/* OBJECTIFS & PROGRAMME */}
               <div id="objectifs" className="scroll-mt-10 space-y-10">
@@ -391,7 +414,7 @@ export default function PrepaDistancePage() {
                     <div>
                       <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Format</p>
                       <p className="text-slate-900 font-medium leading-relaxed text-sm">
-                        100% à distance. Apprenez depuis chez vous.
+                        100% à distance. 1h de live et un cours vidéo par semaine (hors vacances scolaires)
                       </p>
                     </div>
                   </div>

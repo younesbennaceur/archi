@@ -73,13 +73,13 @@ export default function Rhino3DPage() {
       {/* HERO SECTION */}
       <section className="relative overflow-hidden bg-slate-900 text-white">
         <div className="absolute inset-0 -z-0">
-          {/* Image abstraite 3D / Modélisation */}
+          {/* Image CIUP avec overlay élégant */}
           <img 
-            src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&w=1600&q=80" 
-            alt="Modélisation 3D Rhino" 
-            className="h-full w-full object-cover opacity-30" 
+            src="https://www.pariszigzag.fr/wp-content/uploads/2023/11/CITE-UNIVERSITAIRE-3-PARIS-ZIZGAG.jpg" 
+            alt="Architecture et Modélisation 3D Rhino - Cité Universitaire" 
+            className="h-full w-full object-cover opacity-40 mix-blend-overlay" 
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-slate-900/40" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 pb-20">

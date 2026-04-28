@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { Instagram, Facebook, Linkedin, MapPin, Phone, Mail, UserPlus, Briefcase } from 'lucide-react'
-import Logo from './Logo.jsx'
 
 export default function Footer() {
   return (
@@ -9,7 +8,7 @@ export default function Footer() {
         
         {/* COLONNE 1 : LOGO & SOCIAL */}
         <div>
-          <Logo />
+          <img src="/logo.png" alt="Logo" className="h-24 w-24" />
           <p className="mt-5 text-slate-600 text-sm leading-relaxed">
             La référence pour préparer et réussir les concours d'entrée aux Écoles Nationales Supérieures d'Architecture (ENSA).
           </p>

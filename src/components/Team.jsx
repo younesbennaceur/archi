@@ -2,12 +2,6 @@ import { motion } from 'framer-motion'
 
 const team = [
   { 
-    name: 'Faïz Cheraïet', 
-    role: 'Directeur',
-    desc: 'Stratégie de candidature aux écoles - Orientation des élèves',
-    img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80' 
-  },
-  { 
     name: 'Solveig Alegre', 
     role: 'Arts plastiques',
     desc: 'Préparation du book et épreuves d’arts plastiques',

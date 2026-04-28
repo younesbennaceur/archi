@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
-import Logo from './Logo.jsx'
 
 const links = [
   { to: '/', label: 'Accueil' },
@@ -25,9 +24,9 @@ export default function Navbar() {
 
   return (
     <header className={`sticky top-0 z-40 w-full transition ${scrolled ? 'bg-white/90 backdrop-blur shadow-sm' : 'bg-white/70 backdrop-blur-sm'}`}>
-      <div className="mx-auto max-w-7xl flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
+      <div className="mx-auto max-w-7xl flex items-center justify-between px-4 sm:px-6 lg:px-8 py-2">
         <Link to="/" className="flex items-center">
-          <Logo />
+          <img src="/logo.png" alt="Prépa MonArchi" className="h-18 w-20" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">

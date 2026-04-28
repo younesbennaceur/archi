@@ -71,15 +71,15 @@ export default function StageDecouvertePage() {
         path="/services/stage-decouverte"
       />
 
-      {/* HERO SECTION */}
+      {/* HERO SECTION avec l'image CIUP et l'overlay */}
       <section className="relative overflow-hidden bg-slate-900 text-white">
         <div className="absolute inset-0 -z-0">
           <img 
-            src="/images/cover-decouverte.jpg" 
-            alt="Stage découverte architecture" 
-            className="h-full w-full object-cover opacity-30" 
+            src="https://www.pariszigzag.fr/wp-content/uploads/2023/11/CITE-UNIVERSITAIRE-1-PARIS-ZIZGAG.jpg" 
+            alt="Stage découverte architecture - Cité Universitaire" 
+            className="h-full w-full object-cover opacity-40 mix-blend-overlay" 
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-slate-900/40" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 pb-20">
@@ -87,22 +87,21 @@ export default function StageDecouvertePage() {
             <ArrowLeft size={16} /> Toutes les formations
           </Link>
 
-        
-            <motion.h1
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] max-w-5xl"
-                              >
-                                Le stage de découverte :
-                              </motion.h1>
-                              <motion.p
-                                 initial={{ opacity: 0, y: 20 }}
-                                 animate={{ opacity: 1, y: 0 }}
-                                 transition={{ delay: 0.1 }}
-                                 className="mt-6 text-2xl text-[color:var(--color-accent,orange)] font-bold tracking-wide"
-                              >
-                                pour affiner votre projet de devenir architecte
-                              </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mt-8 text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.1] max-w-5xl"
+          >
+            Le stage de découverte :
+          </motion.h1>
+          <motion.p
+             initial={{ opacity: 0, y: 20 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ delay: 0.1 }}
+             className="mt-6 text-2xl text-[color:var(--color-accent,orange)] font-bold tracking-wide"
+          >
+            pour affiner votre projet de devenir architecte
+          </motion.p>
         </div>
       </section>
 
@@ -158,6 +157,30 @@ export default function StageDecouvertePage() {
                   </li>
                 </ul>
               </nav>
+
+              {/* BLOC : L'inspiration architecturale CIUP */}
+              <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col md:flex-row gap-8 items-center">
+                <div className="w-full md:w-1/2">
+                   <h3 className="text-2xl font-black text-slate-900 mb-4 leading-tight">L'environnement idéal pour une première approche</h3>
+                   <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                     Ce stage de découverte bénéficie d'un emplacement privilégié dans le 14e arrondissement, à proximité immédiate de la <strong>Cité Internationale Universitaire de Paris</strong>. 
+                   </p>
+                   <p className="text-slate-600 text-sm leading-relaxed">
+                     Ses dizaines de pavillons aux styles architecturaux du monde entier (Fondation Suisse, Collège Néerlandais...) offrent un terrain d'observation exceptionnel pour éveiller votre regard, comprendre les volumes et réaliser vos premiers croquis.
+                   </p>
+                </div>
+                <div className="w-full md:w-1/2 relative h-64 rounded-2xl overflow-hidden shadow-inner">
+                  <img 
+                    src="https://media.timeout.com/images/106009567/1024/576/image.webp" 
+                    alt="S'éveiller à l'architecture - Cité U" 
+                    className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent pointer-events-none" />
+                  <span className="absolute bottom-4 left-4 text-white text-xs font-medium px-2 py-1 bg-black/40 backdrop-blur-md rounded-md">
+                     S'éveiller à l'architecture
+                  </span>
+                </div>
+              </div>
 
               {/* OBJECTIFS */}
               <div id="objectifs" className="scroll-mt-24 space-y-8">
