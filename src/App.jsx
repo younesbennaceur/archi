@@ -15,6 +15,7 @@ import StageBootCampPage from './pages/StageBootCampPage.jsx'
 import StageEntretienEnsaPage from './pages/StageEntretienEnsaPage.jsx'
 import StageDecouvertePage from './pages/StageDecouvertePage.jsx'
 import Rhino3DPage from './pages/Rhino3DPage.jsx'
+import MentionsLegalesPage from './pages/Mentions.jsx'
 
 export default function App() {
   return (
@@ -31,6 +32,7 @@ export default function App() {
           <Route path="/services/stage-entretien-ensa" element={<StageEntretienEnsaPage />} />
           <Route path="/services/formation-rhino-3d" element={<Rhino3DPage />} />
           <Route path="/services/stage-decouverte" element={<StageDecouvertePage />} />
+          <Route path="/mentions-legales" element={<MentionsLegalesPage />} />
           
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />

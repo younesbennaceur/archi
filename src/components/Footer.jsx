@@ -56,9 +56,8 @@ export default function Footer() {
             Légal
           </h4>
           <ul className="mt-5 space-y-3 text-slate-600 text-xs">
-            <li><a href="#" className="hover:text-[color:var(--color-accent)]">Mentions Légales</a></li>
-            <li><a href="#" className="hover:text-[color:var(--color-accent)]">Confidentialité</a></li>
-            <li><a href="#" className="hover:text-[color:var(--color-accent)]">CGV</a></li>
+            <li><Link to="/mentions-legales" className="hover:text-[color:var(--color-accent)]">Mentions Légales</Link></li>
+         
           </ul>
         </div>
 

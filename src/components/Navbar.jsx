@@ -25,9 +25,14 @@ export default function Navbar() {
   return (
     <header className={`sticky top-0 z-40 w-full transition ${scrolled ? 'bg-white/90 backdrop-blur shadow-sm' : 'bg-white/70 backdrop-blur-sm'}`}>
       <div className="mx-auto max-w-7xl flex items-center justify-between px-4 sm:px-6 lg:px-8 py-2">
-        <Link to="/" className="flex items-center">
-          <img src="/logo.png" alt="Prépa MonArchi" className="h-18 w-20" />
+        
+        {/* --- MODIFICATION ICI --- */}
+        <Link to="/" className="flex items-center gap-3">
+         <img src="/logo.png" alt="Logo" className="h-14 w-16" />
+          <span className="text-md font-bold text-slate-800">Prépa MonArchi</span>
+         
         </Link>
+        {/* ------------------------ */}
 
         <nav className="hidden md:flex items-center gap-8">
           {links.map(l => (
