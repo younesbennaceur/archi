@@ -24,7 +24,7 @@ export default function Services() {
            Les différentes préparations à l'admission en école d'Architecture
           </h2>
           <p className="mt-4 text-slate-600">
-            Des programmes millimétrés conçus avec les architectes pour répondre aux exigences spécifiques des concours ENSA, adaptés à tous les profils.
+            Des programmes millimétrés conçus avec les architectes pour répondre aux exigences spécifiques des concours aux ENSA, adaptés à tous les profils.
           </p>
         </div>
 

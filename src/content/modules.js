@@ -8,7 +8,7 @@ export const modules = [
     tag: 'RECOMMANDÉ',
     title: 'Prépa Annuelle Temps Plein',
     short: 'La voie royale vers le diplôme d’État',
-    subtitle: "Notre formation phare en immersion totale à Paris. Sur une année complète, préparez sereinement les concours des ENSA et écoles internationales. Au programme : acquisition de bases techniques (Dessin, projet, expression plastique, modélisation), constitution d'un book professionnel, entraînements poussés aux oraux, culture architecturale, stratégie d'orientation et un stage en agence d’architecture.",
+    subtitle: "Notre formation phare en immersion totale à Paris. Sur une année complète, préparez sereinement les concours des ENSA et écoles internationales. Au programme : acquisition de bases techniques (dessin, projet, expression plastique, modélisation), constitution d'un book professionnel, entraînements poussés aux oraux, culture architecturale, stratégie d'orientation et un stage en agence d’architecture.",
     price: '6 980 €',
     cover: 'https://www.pariszigzag.fr/wp-content/uploads/2023/11/CITE-UNIVERSITAIRE-5-PARIS-ZIZGAG.jpg',
   },

@@ -30,11 +30,11 @@ export default function Hero() {
           <h1 className="mt-6 text-5xl md:text-7xl font-black tracking-tight text-[color:var(--color-ink)] leading-[1.05]">
             Votre avenir en
             <br />
-            <span className="italic font-serif">École</span>{' '}
-            <span className="text-[color:var(--color-blue)]">d'Architecture</span>
+            École
+            <span className="text-[color:var(--color-blue)]"> d'Architecture</span>
           </h1>
 
-          <p className="mt-6 max-w-2xl text-lg text-slate-700">
+          <p className="mt-6 max-w-2xl font-semibold text-lg text-slate-900">
             Préparez les concours d'entrée aux ENSA avec des architectes passionnés.
             La référence pour construire un dossier solide et convaincre le jury.
           </p>

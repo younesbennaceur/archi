@@ -57,12 +57,12 @@ export default function WhyUs() {
             L'EXCELLENCE ARCHITECTURALE
           </span>
           <h2 className="mt-6 text-4xl md:text-5xl font-black tracking-tight text-[color:var(--color-ink)] leading-[1.1]">
-            La plus grande prépa 100%
+            La meilleure prépa 100%
             <br />
             architecture de <span className="text-[color:var(--color-blue)]">France</span>
           </h2>
           <p className="mt-5 text-slate-600">
-            Une méthodologie éprouvée pour transformer votre passion en admission dans les écoles d'architecture les plus prestigieuses.
+            Une méthodologie éprouvée, née en 2013, pour transformer votre passion en admission dans les écoles d'architecture les plus prestigieuses.
           </p>
         </div>
 
