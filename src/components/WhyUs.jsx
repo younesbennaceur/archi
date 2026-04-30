@@ -62,7 +62,7 @@ export default function WhyUs() {
             architecture de <span className="text-[color:var(--color-blue)]">France</span>
           </h2>
           <p className="mt-5 text-slate-600">
-            Une méthodologie éprouvée, née en 2013, pour transformer votre passion en admission dans les écoles d'architecture les plus prestigieuses.
+            Une méthodologie rigoureuse, née en 2013, pour transformer votre passion en admission dans les écoles d'architecture les plus prestigieuses.
           </p>
         </div>
 
