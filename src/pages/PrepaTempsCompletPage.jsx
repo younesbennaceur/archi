@@ -354,12 +354,40 @@ export default function PrepaTempsCompletPage() {
                   />
                   <AccordionItem 
                     title="Histoire de l’architecture et histoire de l’art"
-                    content=""
+                    content="L’histoire de l’architecture est indispensable pour comprendre vers quoi se dirige l’architecture de
+demain. L’évolution de l’architecture est le résultat d’un mélange de facteurs qui interagissent entre
+eux au fil du temps.
+-Elle est fortement influencée par les progrès technique et scientifique.
+-L’architecture reflète également les besoins et modes de vie des sociétés.
+-Y est aussi prégnante une dimension culturelle et artistique qui guide son style, ainsi que des
+facteurs économiques.
+-Et pour finir, les contraintes environnementales et climatiques y sont plus que jamais
+déterminantes.
+Il est donc important de pointer ces différents facteurs afin de comprendre son évolution.
+-Les cours seront suivis :
+-De demandes de croquis de bâtiments emblématiques d’une période ou d’un style architectural, à
+réaliser sur place et à ramener pour le cours suivant.
+-D’interrogations orales ou écrites.
+Nous étudierons les périodes allant de l’antiquité à aujourd’hui."
                   />
                   <AccordionItem 
                     title="Culture architecturale"
                     intro="histoire du design, visites, expositions"
-                    content=""
+                    content="La culture architecturale, indissociable de l’histoire de l’architecture, est un mélange de savoir,
+d’observation et de sensibilité qui permet de mieux lire et apprécier les espaces qui nous entourent.
+-Elle inclut la compréhension des principes de conception (notions d’espace, de lumière, de
+matériaux, de proportions ou encore la relation entre un bâtiment et son environnement).
+-Elle fait référence à des architectes et des œuvres marquantes, afin de comprendre quel est leur
+rapport à l’architecture.
+-Elle aiguise le sens critique et le regard sur l’espace bâti : être capable d’analyser un lieu : est-il
+fonctionnel ? Les matériaux employés semblent-ils bien choisis ? Le ressenti est-il en rapport avec la
+symbolique du bâtiment etc…
+-Elle inclut la dimension culturelle et sociale car l’architecture reflète les valeurs d’une société
+(pouvoir, religion, écologie, technologie…).
+-Et puis comprendre un bâtiment, c’est aussi comprendre son contexte.
+Les cours comprendront :
+-Des exposés à réaliser par les élèves.
+-Des visites d’architectures emblématiques d’Ile de France et de quartiers parisiens."
                   />
                   <AccordionItem 
                     title="Projet architectural"

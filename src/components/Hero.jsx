@@ -30,8 +30,7 @@ export default function Hero() {
           <h1 className="mt-6 text-5xl md:text-7xl font-black tracking-tight text-[color:var(--color-ink)] leading-[1.05]">
             Votre avenir en
             <br />
-            École
-            <span className="text-[color:var(--color-blue)]"> d'Architecture</span>
+            École d'Architecture
           </h1>
 
           <p className="mt-6 max-w-2xl font-semibold text-lg text-slate-900">

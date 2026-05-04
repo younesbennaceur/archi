@@ -10,7 +10,7 @@ export const modules = [
     short: 'La voie royale vers le diplôme d’État',
     subtitle: "Notre formation phare en immersion totale à Paris. Sur une année complète, préparez sereinement les concours des ENSA et écoles internationales. Au programme : acquisition de bases techniques (dessin, projet, expression plastique, modélisation), constitution d'un book professionnel, entraînements poussés aux oraux, culture architecturale, stratégie d'orientation et un stage en agence d’architecture.",
     price: '6 980 €',
-    cover: 'https://www.pariszigzag.fr/wp-content/uploads/2023/11/CITE-UNIVERSITAIRE-5-PARIS-ZIZGAG.jpg',
+    cover: 'https://media.routard.com/image/74/7/photo.1405747.w1000.jpg',
   },
   {
     slug: 'prepa-distance',
@@ -50,7 +50,7 @@ export const modules = [
     short: 'Affinez votre projet d’architecte',
     subtitle: "La formation idéale pour confirmer votre vocation. En 5 jours, plongez au cœur de la profession : découvrez la diversité des métiers (urbaniste, designer, paysagiste), initiez-vous aux bases du dessin d'observation et à la fabrication de maquettes en 3 dimensions, enrichissez votre culture urbaine et clarifiez vos futurs choix d'orientation avant de vous lancer.",
     price: '790 €',
-    cover: 'https://www.pariszigzag.fr/wp-content/uploads/2023/11/CITE-UNIVERSITAIRE-1-PARIS-ZIZGAG.jpg',
+    cover: 'https://media.routard.com/image/71/5/photo.1582715.w1000.jpeg',
   },
   {
     slug: 'formation-rhino-3d',

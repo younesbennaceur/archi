@@ -24,6 +24,7 @@ export default function Home() {
       <Services />
       <Team />
       <Pedagogy />
+      
       <Avis />
       <CertificationQualiopi />
       <Cta />

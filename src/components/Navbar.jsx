@@ -54,7 +54,7 @@ export default function Navbar() {
             href="tel:+33123456789"
             className="rounded-full bg-[color:var(--color-accent)] px-4 py-2 text-white text-sm font-semibold hover:bg-orange-600 transition"
           >
-            +33 07 89 78 66 56
+            07 89 78 66 56
           </a>
         </div>
 

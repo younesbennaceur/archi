@@ -21,8 +21,8 @@ export default function Pedagogy() {
             <span className="h-px w-8 bg-[color:var(--color-accent)]" />
             NOTRE PÉDAGOGIE
           </div>
-          <h2 className="mt-4 text-4xl md:text-6xl font-black tracking-tight leading-[1.05]">
-            Construisez les fondations de votre parcours.
+          <h2 className="mt-4 text-3xl md:text-5xl font-black tracking-tight leading-[1.05]">
+            Construisez les fondations de votre parcours d'architecture.
           </h2>
           <p className="mt-6 text-slate-600 text-lg max-w-lg">
             La Prépa MonArchi vous aide à baliser votre parcours d'études « en fonction de votre profil » vers les voies, écoles, passerelles et concours pour devenir architecte avec

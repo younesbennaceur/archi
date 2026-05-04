@@ -157,7 +157,7 @@ export default function PrepaDistancePage() {
                 <div className="w-full md:w-1/2">
                    <h3 className="text-2xl font-black text-slate-900 mb-4 leading-tight">La culture architecturale, jusqu'à chez vous</h3>
                    <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                     Même à distance, nous avons à cœur de vous transmettre l'essence de l'architecture. Nos cours d'histoire et nos analyses prennent appui sur des exemples forts, comme l'incroyable diversité des pavillons de la <strong>Cité Internationale Universitaire de Paris</strong>.
+                     Même à distance, nous avons à cœur de vous transmettre l'essence de l'architecture. Nos cours d'histoire et nos analyses prennent appui sur des exemples forts, comme l'incroyable diversité des pavillons de <strong>Cité Internationale Universitaire de Paris</strong> qui avoisine Prépa MonArchi.
                    </p>
                    <p className="text-slate-600 text-sm leading-relaxed">
                      L'objectif est d'éduquer votre regard pour que vous puissiez analyser et dessiner l'architecture de votre propre région avec le même niveau d'exigence.
