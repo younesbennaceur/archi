@@ -5,8 +5,8 @@ const team = [
     name: 'Solveig Alegre', 
     role: "Architecte diplômée de l'ENSA Belleville",
     desc: 'Préparation du book et épreuves d’arts plastiques',
-    link: 'http://solveig.alegre.art',
-    linkText: 'Voir le portfolio',
+    link: 'https://www.instagram.com/solveig.alegre.art?utm_source=ig_web_button_share_sheet',
+    linkText: 'Voir sur Instagram',
     img: '/Solveig Alegre.png' 
   },
   { 
