@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Check, MapPin, Calendar, ArrowLeft, ArrowRight, Quote, 
   Globe, Lightbulb, Image as ImageIcon, MessageSquare, 
-  ChevronDown, List, Target, Users, ChevronRight, PenTool, Eye, Landmark, Compass, UserCheck
+  ChevronDown, List, Target, Users, ChevronRight, PenTool, Eye, Landmark, Compass, UserCheck, Camera, Info
 } from 'lucide-react';
 import SEO from '../components/SEO.jsx';
 
@@ -67,12 +67,12 @@ export default function StageDecouvertePage() {
     <div className="scroll-smooth">
       <SEO
         title="Stage de Découverte Architecture | Devenir Architecte"
-        description="Une première approche globale de l’architecture pour affiner votre projet, découvrir les métiers et apprendre les bases."
+        description="Une première approche globale de l’architecture pour affiner votre project, découvrir les métiers et apprendre les bases."
         path="/services/stage-decouverte"
       />
 
-      {/* HERO SECTION avec l'image CIUP et l'overlay */}
-      <section className="relative overflow-hidden bg-slate-900 text-white">
+      {/* HERO SECTION avec l'image CIUP, overlay et Copyright obligatoire */}
+      <section className="relative overflow-hidden bg-slate-900 text-white pb-12">
         <div className="absolute inset-0 -z-0">
           <img 
             src="https://www.pariszigzag.fr/wp-content/uploads/2023/11/CITE-UNIVERSITAIRE-1-PARIS-ZIZGAG.jpg" 
@@ -100,8 +100,23 @@ export default function StageDecouvertePage() {
              transition={{ delay: 0.1 }}
              className="mt-6 text-2xl text-[color:var(--color-accent,orange)] font-bold tracking-wide"
           >
-            pour affiner votre projet de devenir architecte
+            pour affiner votre project de devenir architecte
           </motion.p>
+        </div>
+
+        {/* COPYRIGHT OBLIGATOIRE */}
+        <div className="absolute bottom-4 right-4 z-20 hidden sm:block">
+          <div className="group relative flex items-center gap-2 rounded-full bg-black/40 backdrop-blur-md border border-white/10 px-3 py-1.5 text-xs text-white/70 transition-all hover:bg-black/80 hover:text-white">
+            <Camera size={12} className="text-[color:var(--color-accent,orange)]" />
+            <span>© Antoine Meyssonnier</span>
+            <Info size={12} className="opacity-40 group-hover:opacity-100 transition-opacity ml-1" />
+            
+            {/* Infobulle (Tooltip) au survol */}
+            <div className="absolute bottom-full right-0 mb-2 hidden w-72 rounded-xl bg-slate-950 p-3 text-[11px] leading-relaxed text-slate-300 shadow-xl border border-slate-800 group-hover:block pointer-events-none">
+              <p className="font-bold text-white mb-0.5">Fondation Avicenne</p>
+              Joyau architectural du XXe siècle niché au sein de la Cité internationale universitaire de Paris.
+            </div>
+          </div>
         </div>
       </section>
 
@@ -160,7 +175,7 @@ export default function StageDecouvertePage() {
 
               {/* BLOC : L'inspiration architecturale CIUP */}
               <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col md:flex-row gap-8 items-center">
-                <div className="w-full md:w-1/2">
+                <div className="w-full ">
                    <h3 className="text-2xl font-black text-slate-900 mb-4 leading-tight">L'environnement idéal pour une première approche</h3>
                    <p className="text-slate-600 text-sm leading-relaxed mb-4">
                      Ce stage de découverte bénéficie d'un emplacement privilégié dans le 14e arrondissement, à proximité immédiate de la <strong>Cité Internationale Universitaire de Paris</strong>. 
@@ -169,17 +184,7 @@ export default function StageDecouvertePage() {
                      Ses dizaines de pavillons aux styles architecturaux du monde entier (Fondation Suisse, Collège Néerlandais...) offrent un terrain d'observation exceptionnel pour éveiller votre regard, comprendre les volumes et réaliser vos premiers croquis.
                    </p>
                 </div>
-                <div className="w-full md:w-1/2 relative h-64 rounded-2xl overflow-hidden shadow-inner">
-                  <img 
-                    src="https://media.timeout.com/images/106009567/1024/576/image.webp" 
-                    alt="S'éveiller à l'architecture - Cité U" 
-                    className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent pointer-events-none" />
-                  <span className="absolute bottom-4 left-4 text-white text-xs font-medium px-2 py-1 bg-black/40 backdrop-blur-md rounded-md">
-                     S'éveiller à l'architecture
-                  </span>
-                </div>
+               
               </div>
 
               {/* OBJECTIFS */}
@@ -202,6 +207,21 @@ export default function StageDecouvertePage() {
                   </ul>
                 </div>
               </div>
+
+              {/* BREAK VISUEL 1 : Bannière d'immersion découverte */}
+              <motion.div 
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="relative h-48 rounded-3xl overflow-hidden shadow-md my-8"
+              >
+                <img src="/img2.jpeg" alt="Atelier de découverte" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-950/70 via-slate-900/40 to-transparent flex items-center px-8 sm:px-12">
+                   <p className="text-white font-black tracking-tight text-xl sm:text-2xl max-w-md leading-snug">
+                      Plongez concrètement dans le quotidien d'un étudiant en architecture.
+                   </p>
+                </div>
+              </motion.div>
 
               <hr className="border-slate-200" />
 
@@ -232,6 +252,16 @@ export default function StageDecouvertePage() {
                     </div>
                   </div>
 
+                  {/* BREAK VISUEL 2 : Grille de 2 images (Exploration / Croquis) */}
+                  <div className="grid sm:grid-cols-2 gap-6 my-10">
+                    <div className="rounded-2xl overflow-hidden h-56 shadow-sm border border-slate-100">
+                      <img src="/img3.jpeg" alt="Exploration des volumes" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <div className="rounded-2xl overflow-hidden h-56 shadow-sm border border-slate-100">
+                      <img src="/img4.jpeg" alt="Initiation au dessin" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                    </div>
+                  </div>
+
                   <div className="relative pl-6 border-l-4 border-slate-200 hover:border-[color:var(--color-accent,orange)] transition-colors">
                     <h3 className="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2"><Compass size={24} className="text-slate-400" /> Nous vous guidons dans vos choix d’orientation</h3>
                     <p className="mb-3">Au sein de l’architecture, il existe de nombreux métiers et de multiples spécialisations. Découvrez leurs spécificités, les avantages et inconvénients de chacun, et ce qui les différencie :</p>
@@ -244,17 +274,39 @@ export default function StageDecouvertePage() {
                     <p>Nous vous aidons à y voir plus clair ! Grâce à un petit test de personnalité, nous pourrons voir quel métier vous correspond le mieux pour vous guider dans vos futurs choix d’orientation.</p>
                   </div>
 
+                  {/* BREAK VISUEL 3 : Carte image avec légende superposée */}
+                  <div className="relative rounded-3xl overflow-hidden shadow-sm border border-slate-200 my-10">
+                     <img src="/img5.jpg" alt="Accompagnement en atelier" className="w-full h-72 object-cover" />
+                     <div className="absolute bottom-0 inset-x-0 bg-white/90 backdrop-blur-md p-6 border-t border-white/20 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div>
+                           <p className="font-bold text-slate-900 text-sm">Un suivi attentif pour faire naître des vocations</p>
+                           <p className="text-xs text-slate-600">Des conseils bienveillants pour aborder sereinement les bases de la conception.</p>
+                        </div>
+                        <span className="text-xs font-bold bg-slate-900 text-white px-3 py-1.5 rounded-lg w-fit">Approche globale</span>
+                     </div>
+                  </div>
+
                   <div className="relative pl-6 border-l-4 border-slate-200 hover:border-[color:var(--color-accent,orange)] transition-colors">
                     <h3 className="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2"><PenTool size={24} className="text-slate-400" /> Nous vous exerçons à la pratique du dessin et de la maquette</h3>
                     <p className="mb-3">Le dessin prend une place importante dans les études d’architecture. Un architecte doit être capable de dessiner sur papier ou tablette pour projeter un objet ou un espace. Il ne faut donc pas négliger la technique !</p>
                     <p className="mb-3">Nos professeurs vous accompagnent pour vous enseigner au cours d’une journée les bases du dessin ou vous permettre de vous perfectionner. Vous découvrirez les bases dont a besoin un architecte de renom pour exercer !</p>
                     <p>Nous vous proposons également une première approche de l’espace par la maquette. Expérimentez la matière, optimisez la surface et découvrez les propriétés des matériaux en élaborant votre propre maquette en trois dimensions !</p>
                     
-                    {/* Légende de l'image intégrée au texte */}
                     <div className="mt-4 flex items-center gap-2 text-sm italic text-slate-500 bg-slate-50 py-2 px-4 rounded-lg w-fit">
                       <ImageIcon size={16} className="text-slate-400" />
                       Les maquettes fabriquées par les élèves
                     </div>
+                  </div>
+
+                  {/* BREAK VISUEL 4 : Bannière d'illustration des outils */}
+                  <div className="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-100 flex flex-col sm:flex-row gap-6 items-center my-8">
+                     <img src="/img6.JPG" alt="Matériaux et découpe" className="w-full sm:w-1/3 h-40 object-cover rounded-2xl shadow-sm" />
+                     <div className="space-y-2">
+                        <p className="text-slate-900 font-bold text-lg">Apprenez à manipuler l'échelle et la matière</p>
+                        <p className="text-slate-600 text-sm leading-relaxed">
+                           Découpe, assemblage, proportions... touchez du doigt les problématiques de structure en concevant vos premiers volumes en 3 dimensions.
+                        </p>
+                     </div>
                   </div>
 
                   <div className="relative pl-6 border-l-4 border-slate-200 hover:border-[color:var(--color-accent,orange)] transition-colors">
@@ -263,17 +315,27 @@ export default function StageDecouvertePage() {
                     <p className="mb-3">Avec la fabrication de maquettes, familiarisez-vous avec les volumes et le respect de l’échelle.</p>
                     <p>Grâce au cours de croquis d’observation, apprenez à dessiner en respectant les proportions et à bien cadrer vos dessins. Le cours peut s’effectuer à l’extérieur si le temps le permet. À vos crayons !</p>
 
-                    {/* Légende de l'image intégrée au texte */}
                     <div className="mt-4 flex items-center gap-2 text-sm italic text-slate-500 bg-slate-50 py-2 px-4 rounded-lg w-fit">
                       <ImageIcon size={16} className="text-slate-400" />
                       Élèves en pleine création
                     </div>
                   </div>
 
+                  {/* BREAK VISUEL 5 : Double image encadrant la pratique créative */}
+                  <div className="grid sm:grid-cols-2 gap-6 my-8">
+                     <img src="/img7.jpg" alt="Croquis d'observation" className="w-full h-48 object-cover rounded-2xl shadow-sm" />
+                     <img src="/img8.jpg" alt="Assemblage de maquette" className="w-full h-48 object-cover rounded-2xl shadow-sm" />
+                  </div>
+
                   <div className="relative pl-6 border-l-4 border-slate-200 hover:border-[color:var(--color-accent,orange)] transition-colors">
                     <h3 className="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2"><Landmark size={24} className="text-slate-400" /> Nous développons votre culture architecturale</h3>
                     <p className="mb-3">Enfin, découvrez la Cité de l’Architecture le temps d’une après-midi ! Cette excursion pratique est l’occasion de compléter de visu les cours théoriques qui ont lieu pendant les cinq jours.</p>
                     <p>Entre le cours d’histoire qui couvre l’Antiquité à nos jours et le cours “Habiter” qui vous explique l’évolution du bâti selon les cultures et les croyances, vous ne serez pas en reste ! Nous vous donnons une conscience du contexte social et technologique duquel dépendent les bâtiments que nous construisons depuis des milliers d’années.</p>
+                  </div>
+
+                  {/* BREAK VISUEL 6 : Dernière image pour illustrer la cohésion de groupe */}
+                  <div className="rounded-3xl overflow-hidden shadow-sm my-8 border border-slate-100">
+                     <img src="/img9.JPG" alt="Visite et cohésion de groupe" className="w-full h-64 object-cover hover:scale-105 transition-transform duration-700" />
                   </div>
 
                 </div>
@@ -306,7 +368,6 @@ export default function StageDecouvertePage() {
                     </p>
                   </div>
                   
-                  {/* Légende de l'image intégrée au texte */}
                   <div className="mt-6 flex items-center gap-2 text-sm italic text-[color:var(--color-accent,orange)] bg-white/60 py-2 px-4 rounded-lg w-fit font-semibold">
                     <ImageIcon size={16} />
                     Réalisation d'élèves

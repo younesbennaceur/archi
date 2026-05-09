@@ -3,8 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Check, MapPin, Calendar, ArrowLeft, ArrowRight, Quote, 
-  BookOpen, Globe, Lightbulb, PenTool, Image, MessageSquare, 
-  ChevronDown, List, GraduationCap, Building, Clock, ChevronRight
+  BookOpen, Globe, Lightbulb, PenTool, Image as ImageIcon, MessageSquare, 
+  ChevronDown, List, GraduationCap, Building, Clock, ChevronRight, Camera, Info
 } from 'lucide-react';
 import SEO from '../components/SEO.jsx';
 
@@ -73,18 +73,18 @@ export default function PrepaTempsCompletPage() {
         path="/services/prepa-plein-temps"
       />
 
-      {/* HERO SECTION avec l'image de la Cité Universitaire */}
-      <section className="relative overflow-hidden bg-slate-900 text-white">
+      {/* HERO SECTION avec l'image de la Cité Universitaire et le Copyright */}
+      <section className="relative overflow-hidden bg-slate-900 text-white pb-12">
         <div className="absolute inset-0 -z-0">
           <img 
-            src="https://www.pariszigzag.fr/wp-content/uploads/2023/11/CITE-UNIVERSITAIRE-5-PARIS-ZIZGAG.jpg" 
-            alt="Cité Internationale Universitaire de Paris" 
+            src="/2.webp" 
+            alt="Fondation Avicenne - Cité Internationale Universitaire de Paris" 
             className="h-full w-full object-cover opacity-40 mix-blend-overlay" 
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-slate-900/40" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 pb-20">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 pb-16">
           <Link to="/services" className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors">
             <ArrowLeft size={16} /> Toutes les formations
           </Link>
@@ -104,6 +104,21 @@ export default function PrepaTempsCompletPage() {
           >
             la voie la plus sûre pour réussir à devenir architecte
           </motion.p>
+        </div>
+
+        {/* COPYRIGHT OBLIGATOIRE */}
+        <div className="absolute bottom-4 right-4 z-20 hidden sm:block">
+          <div className="group relative flex items-center gap-2 rounded-full bg-black/40 backdrop-blur-md border border-white/10 px-3 py-1.5 text-xs text-white/70 transition-all hover:bg-black/80 hover:text-white">
+            <Camera size={12} className="text-[color:var(--color-accent,orange)]" />
+            <span>© Antoine Meyssonnier</span>
+            <Info size={12} className="opacity-40 group-hover:opacity-100 transition-opacity ml-1" />
+            
+            {/* Infobulle (Tooltip) au survol */}
+            <div className="absolute bottom-full right-0 mb-2 hidden w-72 rounded-xl bg-slate-950 p-3 text-[11px] leading-relaxed text-slate-300 shadow-xl border border-slate-800 group-hover:block pointer-events-none">
+              <p className="font-bold text-white mb-0.5">Fondation Avicenne</p>
+              Joyau architectural du XXe siècle niché au sein de la Cité internationale universitaire de Paris.
+            </div>
+          </div>
         </div>
       </section>
 
@@ -160,28 +175,18 @@ export default function PrepaTempsCompletPage() {
                 </ul>
               </nav>
 
-              {/* SECTION: CADRE D'ÉTUDE (Intégration de l'image de la Cité U) */}
+              {/* SECTION: CADRE D'ÉTUDE */}
               <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col md:flex-row gap-8 items-center">
-                <div className="w-full md:w-1/2">
+                <div className="w-full ">
                    <h3 className="text-2xl font-black text-slate-900 mb-4 leading-tight">Un cadre d'étude exceptionnel au cœur du 14e arrondissement</h3>
                    <p className="text-slate-600 text-sm leading-relaxed mb-4">
                      Notre école est située à proximité immédiate de la <strong>Cité Internationale Universitaire de Paris (CIUP)</strong>. Cet environnement unique offre à nos étudiants un musée d'architecture à ciel ouvert, idéal pour nourrir leur culture architecturale et s'exercer au croquis sur le vif.
                    </p>
                    <p className="text-slate-600 text-sm leading-relaxed">
-                     Du Pavillon Suisse de Le Corbusier au Collège Néerlandais, la diversité des styles architecturaux de la CIUP constitue une source d'inspiration inépuisable tout au long de votre année préparatoire.
+                     Du Pavillon Suisse de Le Corbusier à la Fondation Avicenne, la diversité des styles architecturaux de la CIUP constitue une source d'inspiration inépuisable tout au long de votre année préparatoire.
                    </p>
                 </div>
-                <div className="w-full md:w-1/2 relative h-64 rounded-2xl overflow-hidden shadow-inner">
-                  <img 
-                    src="https://www.pariszigzag.fr/wp-content/uploads/2023/11/CITE-UNIVERSITAIRE-5-PARIS-ZIZGAG.jpg" 
-                    alt="Fondation Deutsch de la Meurthe, Cité Universitaire" 
-                    className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent pointer-events-none" />
-                  <span className="absolute bottom-4 left-4 text-white text-xs font-medium px-2 py-1 bg-black/40 backdrop-blur-md rounded-md">
-                     Cité Internationale Universitaire
-                  </span>
-                </div>
+                
               </div>
 
 
@@ -211,6 +216,21 @@ export default function PrepaTempsCompletPage() {
                   </div>
                 </div>
 
+                {/* BREAK VISUEL 1 : Bannière pleine largeur immersive */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="relative h-48 rounded-3xl overflow-hidden shadow-md my-8"
+                >
+                  <img src="/img2.jpeg" alt="Atelier d'architecture" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-slate-950/70 via-slate-900/40 to-transparent flex items-center px-8 sm:px-12">
+                     <p className="text-white font-black tracking-tight text-xl sm:text-2xl max-w-md leading-snug">
+                        Développez votre vision spatiale en immersion totale.
+                     </p>
+                  </div>
+                </motion.div>
+
                 <div className="space-y-10 text-slate-700 leading-relaxed">
                   
                   {/* Blocs de texte stylisés */}
@@ -231,6 +251,16 @@ export default function PrepaTempsCompletPage() {
                     <p>De très nombreuses écoles étrangères de haut niveau sont accessibles aux étudiants français. Elles se situent notamment au Royaume-Uni, en Suisse, en Allemagne, au Canada, au Japon, en Russie et figurent souvent en tête des classements internationaux. Ces établissements offrent des perspectives professionnelles remarquables grâce à la qualité de leur enseignement et à la puissance de leurs réseaux d’anciens. Nous vous communiquerons l’ensemble des informations nécessaires pour postuler : réputation, spécialités, débouchés, forces et faiblesses de chaque école. Le manque d’information constitue en effet le principal obstacle pour les candidats français ; nous le levons entièrement.</p>
                   </div>
 
+                  {/* BREAK VISUEL 2 : Grille de 2 images (Atelier / Croquis) */}
+                  <div className="grid sm:grid-cols-2 gap-6 my-10">
+                    <div className="rounded-2xl overflow-hidden h-56 shadow-sm border border-slate-100">
+                      <img src="/img3.jpeg" alt="Travail en atelier" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <div className="rounded-2xl overflow-hidden h-56 shadow-sm border border-slate-100">
+                      <img src="/img4.jpeg" alt="Présentation de projet" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                    </div>
+                  </div>
+
                   <div className="bg-slate-900 text-white p-8 rounded-3xl shadow-lg">
                     <h3 className="text-2xl font-bold mb-5 flex items-center gap-2"><BookOpen size={24} className="text-[color:var(--color-accent,orange)]" /> Les épreuves préparées</h3>
                     <ul className="grid sm:grid-cols-2 gap-4 text-white/90">
@@ -246,6 +276,18 @@ export default function PrepaTempsCompletPage() {
                   <div className="relative pl-6 border-l-4 border-slate-200 hover:border-[color:var(--color-accent,orange)] transition-colors">
                     <h3 className="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2"><Lightbulb size={24} className="text-slate-400" /> Bâtir une stratégie de candidature qui fait la différence</h3>
                     <p>Prenons un exemple concret : vous souhaitez devenir architecte du bâtiment, avec un fort intérêt pour les questions environnementales. Vous avez identifié l’ENSA de Marne-la-Vallée, réputée sur ces sujets. Comment valoriser votre profil ? Quelles expériences, compétences et stages mettre en avant ? Comment montrer la cohérence entre votre parcours, vos ambitions et le projet pédagogique de l’école ? Pour chaque établissement, en France comme à l’étranger, nous élaborons avec vous une stratégie sur mesure de préparation et de candidature, en nous appuyant sur l’expertise de nos enseignants et de notre directeur.</p>
+                  </div>
+
+                  {/* BREAK VISUEL 3 : Carte image avec citation/légende superposée */}
+                  <div className="relative rounded-3xl overflow-hidden shadow-sm border border-slate-200 my-10">
+                     <img src="/img5.jpg" alt="Étudiants en architecture" className="w-full h-72 object-cover" />
+                     <div className="absolute bottom-0 inset-x-0 bg-white/90 backdrop-blur-md p-6 border-t border-white/20 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div>
+                           <p className="font-bold text-slate-900 text-sm">Préparez-vous au contact direct de professionnels</p>
+                           <p className="text-xs text-slate-600">Un encadrement par des architectes en exercice.</p>
+                        </div>
+                        <span className="text-xs font-bold bg-slate-900 text-white px-3 py-1.5 rounded-lg w-fit">Suivi individuel</span>
+                     </div>
                   </div>
 
                   <div id="orientation-pro" className="scroll-mt-24 relative pl-6 border-l-4 border-slate-200 hover:border-[color:var(--color-accent,orange)] transition-colors">
@@ -277,8 +319,19 @@ export default function PrepaTempsCompletPage() {
 
                   <div className="relative pl-6 border-l-4 border-slate-200 hover:border-[color:var(--color-accent,orange)] transition-colors">
                     <h3 className="text-2xl font-bold text-slate-900 mb-3">Anticiper les choix d’études déterminants pour votre carrière</h3>
-                    <p className="mb-3">Le choix de votre école est stratégique : même si le diplôme d’architecte s’obtient dans toutes les ENSA, chacune possède ses spécificités. L’ENSA Malaquais est ainsi sensible aux dimensions artistiques, tandis que l’ENSA Versailles est fortement tournée vers la conservation du patrimoine. Il est donc essentiel d’aligner votre projet professionnel avec l’identité de l’école. De même, envisagez-vous une carrière uniquement en France ou également à l’international ? Certaines écoles étrangères de premier plan constituent des tremplins exceptionnels pour une trajectoire internationale.</p>
+                    <p className="mb-3">Le choice de votre école est stratégique : même si le diplôme d’architecte s’obtient dans toutes les ENSA, chacune possède ses spécificités. L’ENSA Malaquais est ainsi sensible aux dimensions artistiques, tandis que l’ENSA Versailles est fortement tournée vers la conservation du patrimoine. Il est donc essentiel d’aligner votre projet professionnel avec l’identité de l’école. De même, envisagez-vous une carrière uniquement en France ou également à l’international ? Certaines écoles étrangères de premier plan constituent des tremplins exceptionnels pour une trajectoire internationale.</p>
                     <p>Enfin, une fois admis en école d’architecture, plusieurs choix structurants vous attendent : stages, options, échanges internationaux. Nous esquissons avec vous, dès la prépa, une stratégie professionnelle cohérente pour aborder ces décisions avec un temps d’avance.</p>
+                  </div>
+
+                  {/* BREAK VISUEL 4 : Bannière minimaliste avec image en médaillon */}
+                  <div className="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-100 flex flex-col sm:flex-row gap-6 items-center my-8">
+                     <img src="/img6.JPG" alt="Maquette d'architecture" className="w-full sm:w-1/3 h-40 object-cover rounded-2xl shadow-sm" />
+                     <div className="space-y-2">
+                        <p className="text-slate-900 font-bold text-lg">Pensez en volume par la pratique</p>
+                        <p className="text-slate-600 text-sm leading-relaxed">
+                           De l'esquisse sur papier à la réalisation concrète de maquettes, assimilez la méthode projet qui fera votre force durant tout votre cursus universitaire.
+                        </p>
+                     </div>
                   </div>
 
                   <div id="bases-techniques" className="scroll-mt-24 relative pl-6 border-l-4 border-slate-200 hover:border-[color:var(--color-accent,orange)] transition-colors">
@@ -288,8 +341,14 @@ export default function PrepaTempsCompletPage() {
                     <p>Par ailleurs, la maîtrise des logiciels d’architecture est aujourd’hui discriminante à l’embauche. Beaucoup de jeunes diplômés ont un niveau insuffisant sur certains outils, ce qui freine leur insertion. Pour faire du numérique un levier de carrière, nous vous formons très tôt aux logiciels professionnels tels que SketchUp et Autocad.</p>
                   </div>
 
+                  {/* BREAK VISUEL 5 : Double image encadrant la création du Book */}
+                  <div className="grid sm:grid-cols-2 gap-6 my-8">
+                     <img src="/img7.jpg" alt="Création graphique" className="w-full h-48 object-cover rounded-2xl shadow-sm" />
+                     <img src="/img8.jpg" alt="Mise en page de book" className="w-full h-48 object-cover rounded-2xl shadow-sm" />
+                  </div>
+
                   <div className="relative pl-6 border-l-4 border-slate-200 hover:border-[color:var(--color-accent,orange)] transition-colors">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2"><Image size={24} className="text-slate-400" /> Développer et démontrer sa créativité par la réalisation et l’amélioration du book</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2"><ImageIcon size={24} className="text-slate-400" /> Développer et démontrer sa créativité par la réalisation et l’amélioration du book</h3>
                     <p className="mb-3">La constitution d’un book (ou portfolio) est un projet central de l’année, pour plusieurs raisons :</p>
                     <ul className="list-disc pl-5 space-y-2 mb-3">
                       <li>Il sert de critère d’admission dans certaines ENSA et dans presque toutes les écoles d’architecture d’intérieur et de design.</li>
@@ -308,6 +367,11 @@ export default function PrepaTempsCompletPage() {
                   <div className="relative pl-6 border-l-4 border-slate-200 hover:border-[color:var(--color-accent,orange)] transition-colors">
                     <h3 className="text-2xl font-bold text-slate-900 mb-3">Se distinguer grâce à sa culture architecturale</h3>
                     <p>Une culture architecturale riche est le meilleur atout pour concevoir des projets singuliers, innovants et de qualité. Notre programme prévoit des cours d’histoire de l’architecture, des analyses de la pensée des grands architectes et des promenades architecturales parisiennes. Mais l’essentiel réside dans la méthode d’acquisition de cette culture, que nous vous inculquons pour le long terme : lectures recommandées, revues spécialisées, visites de musées et d’expositions… De bonnes habitudes qui vous suivront toute votre vie professionnelle. Ce bagage culturel démontre également aux jurys la maturité de votre projet d’études et professionnel.</p>
+                  </div>
+
+                  {/* BREAK VISUEL 6 : Dernière image pour illustrer la synergie d'équipe */}
+                  <div className="rounded-3xl overflow-hidden shadow-sm my-8 border border-slate-100">
+                     <img src="/img9.JPG" alt="Esprit d'école et suivi" className="w-full h-64 object-cover hover:scale-105 transition-transform duration-700" />
                   </div>
 
                   <div className="relative pl-6 border-l-4 border-slate-200 hover:border-[color:var(--color-accent,orange)] transition-colors">
@@ -354,40 +418,32 @@ export default function PrepaTempsCompletPage() {
                   />
                   <AccordionItem 
                     title="Histoire de l’architecture et histoire de l’art"
-                    content="L’histoire de l’architecture est indispensable pour comprendre vers quoi se dirige l’architecture de
-demain. L’évolution de l’architecture est le résultat d’un mélange de facteurs qui interagissent entre
-eux au fil du temps.
--Elle est fortement influencée par les progrès technique et scientifique.
--L’architecture reflète également les besoins et modes de vie des sociétés.
--Y est aussi prégnante une dimension culturelle et artistique qui guide son style, ainsi que des
-facteurs économiques.
--Et pour finir, les contraintes environnementales et climatiques y sont plus que jamais
-déterminantes.
+                    content="L’histoire de l’architecture est indispensable pour comprendre vers quoi se dirige l’architecture de demain. L’évolution de l’architecture est le résultat d’un mélange de facteurs qui interagissent entre eux au fil du temps.
+• Elle est fortement influencée par les progrès techniques et scientifiques.
+• L’architecture reflète également les besoins et modes de vie des sociétés.
+• Y est aussi prégnante une dimension culturelle et artistique qui guide son style, ainsi que des facteurs économiques.
+• Et pour finir, les contraintes environnementales et climatiques y sont plus que jamais déterminantes.
+
 Il est donc important de pointer ces différents facteurs afin de comprendre son évolution.
--Les cours seront suivis :
--De demandes de croquis de bâtiments emblématiques d’une période ou d’un style architectural, à
-réaliser sur place et à ramener pour le cours suivant.
--D’interrogations orales ou écrites.
+Les cours seront suivis :
+- De demandes de croquis de bâtiments emblématiques d’une période ou d’un style architectural, à réaliser sur place et à ramener pour le cours suivant.
+- D’interrogations orales ou écrites.
+
 Nous étudierons les périodes allant de l’antiquité à aujourd’hui."
                   />
                   <AccordionItem 
                     title="Culture architecturale"
                     intro="histoire du design, visites, expositions"
-                    content="La culture architecturale, indissociable de l’histoire de l’architecture, est un mélange de savoir,
-d’observation et de sensibilité qui permet de mieux lire et apprécier les espaces qui nous entourent.
--Elle inclut la compréhension des principes de conception (notions d’espace, de lumière, de
-matériaux, de proportions ou encore la relation entre un bâtiment et son environnement).
--Elle fait référence à des architectes et des œuvres marquantes, afin de comprendre quel est leur
-rapport à l’architecture.
--Elle aiguise le sens critique et le regard sur l’espace bâti : être capable d’analyser un lieu : est-il
-fonctionnel ? Les matériaux employés semblent-ils bien choisis ? Le ressenti est-il en rapport avec la
-symbolique du bâtiment etc…
--Elle inclut la dimension culturelle et sociale car l’architecture reflète les valeurs d’une société
-(pouvoir, religion, écologie, technologie…).
--Et puis comprendre un bâtiment, c’est aussi comprendre son contexte.
-Les cours comprendront :
--Des exposés à réaliser par les élèves.
--Des visites d’architectures emblématiques d’Ile de France et de quartiers parisiens."
+                    content="La culture architecturale, indissociable de l’histoire de l’architecture, est un mélange de savoir, d’observation et de sensibilité qui permet de mieux lire et apprécier les espaces qui nous entourent.
+• Elle inclut la compréhension des principes de conception (notions d’espace, de lumière, de matériaux, de proportions ou encore la relation entre un bâtiment et wind son environnement).
+• Elle fait référence à des architectes et des œuvres marquantes, afin de comprendre quel est leur rapport à l’architecture.
+• Elle aiguise le sens critique et le regard sur l’espace bâti : être capable d’analyser un lieu : est-il fonctionnel ? Les matériaux employés semblent-ils bien choisis ? Le ressenti est-il en rapport avec la symbolique du bâtiment etc…
+• Elle inclut la dimension culturelle et sociale car l’architecture reflète les valeurs d’une société (pouvoir, religion, écologie, technologie…).
+• Et puis comprendre un bâtiment, c’est aussi comprendre son contexte.
+
+Les cours comprendront :
+- Des exposés à réaliser par les élèves.
+- Des visites d’architectures emblématiques d’Ile de France et de quartiers parisiens."
                   />
                   <AccordionItem 
                     title="Projet architectural"

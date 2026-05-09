@@ -3,8 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Check, MapPin, Calendar, ArrowLeft, ArrowRight, Quote, 
-  BookOpen, Globe, Lightbulb, PenTool, Image, MessageSquare, 
-  ChevronDown, List, GraduationCap, Building, Laptop, ChevronRight
+  BookOpen, Globe, Lightbulb, PenTool, Image as ImageIcon, MessageSquare, 
+  ChevronDown, List, GraduationCap, Building, Laptop, ChevronRight, Camera, Info
 } from 'lucide-react';
 import SEO from '../components/SEO.jsx';
 
@@ -74,8 +74,8 @@ export default function PrepaDistancePage() {
         path="/services/prepa-distance"
       />
 
-      {/* HERO SECTION avec la photo Cité U demandée */}
-      <section className="relative overflow-hidden bg-slate-900 text-white">
+      {/* HERO SECTION avec la photo Cité U demandée et le Copyright */}
+      <section className="relative overflow-hidden bg-slate-900 text-white pb-12">
         <div className="absolute inset-0 -z-0">
           <img 
             src="https://media.timeout.com/images/106009567/1024/576/image.webp" 
@@ -85,7 +85,7 @@ export default function PrepaDistancePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-slate-900/40" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 pb-20">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 pb-16">
           <Link to="/services" className="inline-flex items-center gap-2 text-sm text-white/70 hover:text-white transition-colors">
             <ArrowLeft size={16} /> Toutes les formations
           </Link>
@@ -106,6 +106,8 @@ export default function PrepaDistancePage() {
             constituez une candidature aux ENSA de qualité, depuis chez vous
           </motion.p>
         </div>
+
+       
       </section>
 
       {/* CONTENU PRINCIPAL */}
@@ -152,28 +154,18 @@ export default function PrepaDistancePage() {
                 </ul>
               </nav>
 
-              {/* NOUVEAU BLOC : L'inspiration architecturale même à distance */}
+              {/* SECTION: L'inspiration architecturale même à distance */}
               <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col md:flex-row gap-8 items-center">
-                <div className="w-full md:w-1/2">
+                <div className="w-full ">
                    <h3 className="text-2xl font-black text-slate-900 mb-4 leading-tight">La culture architecturale, jusqu'à chez vous</h3>
                    <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                     Même à distance, nous avons à cœur de vous transmettre l'essence de l'architecture. Nos cours d'histoire et nos analyses prennent appui sur des exemples forts, comme l'incroyable diversité des pavillons de <strong>Cité Internationale Universitaire de Paris</strong> qui avoisine Prépa MonArchi.
+                     Même à distance, nous avons à cœur de vous transmettre l'essence de l'architecture. Nos cours d'histoire et nos analyses prennent appui sur des exemples forts, comme l'incroyable diversité des pavillons de la <strong>Cité Internationale Universitaire de Paris</strong> qui avoisine la Prépa MonArchi.
                    </p>
                    <p className="text-slate-600 text-sm leading-relaxed">
                      L'objectif est d'éduquer votre regard pour que vous puissiez analyser et dessiner l'architecture de votre propre région avec le même niveau d'exigence.
                    </p>
                 </div>
-                <div className="w-full md:w-1/2 relative h-64 rounded-2xl overflow-hidden shadow-inner">
-                  <img 
-                    src="https://media.timeout.com/images/106009567/1024/576/image.webp" 
-                    alt="Fondation Deutsch de la Meurthe, Cité Universitaire" 
-                    className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent pointer-events-none" />
-                  <span className="absolute bottom-4 left-4 text-white text-xs font-medium px-2 py-1 bg-black/40 backdrop-blur-md rounded-md">
-                     S'inspirer des plus grands lieux d'architecture
-                  </span>
-                </div>
+               
               </div>
 
               {/* OBJECTIFS & PROGRAMME */}
@@ -206,6 +198,21 @@ export default function PrepaDistancePage() {
                   </div>
                 </div>
 
+                {/* BREAK VISUEL 1 : Bannière d'immersion et de flexibilité */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="relative h-48 rounded-3xl overflow-hidden shadow-md my-8"
+                >
+                  <img src="/img2.jpeg" alt="Apprentissage à distance" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-slate-950/70 via-slate-900/40 to-transparent flex items-center px-8 sm:px-12">
+                     <p className="text-white font-black tracking-tight text-xl sm:text-2xl max-w-md leading-snug">
+                        L'excellence pédagogique adaptée à votre rythme, où que vous soyez.
+                     </p>
+                  </div>
+                </motion.div>
+
                 <div className="space-y-10 text-slate-700 leading-relaxed">
                   
                   <div className="relative pl-6 border-l-4 border-slate-200 hover:border-[color:var(--color-accent,orange)] transition-colors">
@@ -225,6 +232,16 @@ export default function PrepaDistancePage() {
                     <p>De très nombreuses écoles étrangères de haut niveau accueillent volontiers les étudiants français. Elles se situent notamment au Royaume-Uni, en Suisse, en Allemagne, au Canada, au Japon, en Russie et occupent les premières places des classements internationaux. Leur force réside dans la qualité de leur enseignement et la puissance de leur réseau d’anciens élèves, qui offrent des perspectives professionnelles remarquables. Nous vous communiquons toutes les informations utiles pour postuler – réputation, spécialités, débouchés, points forts et faiblesses de chaque établissement – y compris celles qui restent difficiles à trouver par soi-même. Le manque d’information est en effet le principal obstacle pour les candidats français.</p>
                   </div>
 
+                  {/* BREAK VISUEL 2 : Grille de 2 images (Dessin et Analyse) */}
+                  <div className="grid sm:grid-cols-2 gap-6 my-10">
+                    <div className="rounded-2xl overflow-hidden h-56 shadow-sm border border-slate-100">
+                      <img src="/img3.jpeg" alt="Outils de conception" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <div className="rounded-2xl overflow-hidden h-56 shadow-sm border border-slate-100">
+                      <img src="/img4.jpeg" alt="Suivi de travaux" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                    </div>
+                  </div>
+
                   <div className="bg-slate-900 text-white p-8 rounded-3xl shadow-lg">
                     <h3 className="text-2xl font-bold mb-5 flex items-center gap-2"><BookOpen size={24} className="text-[color:var(--color-accent,orange)]" /> Les épreuves préparées</h3>
                     <ul className="grid sm:grid-cols-1 gap-4 text-white/90">
@@ -238,6 +255,18 @@ export default function PrepaDistancePage() {
                     <h3 className="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2"><Lightbulb size={24} className="text-slate-400" /> Définir une stratégie de candidature qui fasse la différence</h3>
                     <p className="mb-3">Imaginons que vous ayez choisi votre école : vous voulez devenir architecte, très intéressé par les enjeux environnementaux, et vous avez jeté votre dévolu sur l’ENSA Marne-la-Vallée, en pointe sur ces questions. Comment valoriser votre profil ? Quelles expériences, compétences et stages mettre en avant ? Comment démontrer l’adéquation entre votre parcours, vos objectifs et le projet pédagogique de l’école ?</p>
                     <p>Que l’école visée soit en France ou à l’étranger, nous construisons avec vous une stratégie personnalisée de préparation et de candidature, en tirant parti de l’expérience de nos professeurs et de notre directeur.</p>
+                  </div>
+
+                  {/* BREAK VISUEL 3 : Carte image avec légende superposée */}
+                  <div className="relative rounded-3xl overflow-hidden shadow-sm border border-slate-200 my-10">
+                     <img src="/img5.jpg" alt="Coaching et suivi" className="w-full h-72 object-cover" />
+                     <div className="absolute bottom-0 inset-x-0 bg-white/90 backdrop-blur-md p-6 border-t border-white/20 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div>
+                           <p className="font-bold text-slate-900 text-sm">Un accompagnement constant de nos enseignants</p>
+                           <p className="text-xs text-slate-600">Des retours personnalisés sur l'intégralité de vos productions.</p>
+                        </div>
+                        <span className="text-xs font-bold bg-slate-900 text-white px-3 py-1.5 rounded-lg w-fit">Tutorat dédié</span>
+                     </div>
                   </div>
 
                   <div id="orientation-pro" className="scroll-mt-24 relative pl-6 border-l-4 border-slate-200 hover:border-[color:var(--color-accent,orange)] transition-colors">
@@ -273,6 +302,17 @@ export default function PrepaDistancePage() {
                     <p>Enfin, certains choix réalisés une fois en école – stages, options, échanges internationaux – marqueront votre parcours. Nous ébauchons avec vous une stratégie professionnelle cohérente avant même votre entrée en école d’architecture.</p>
                   </div>
 
+                  {/* BREAK VISUEL 4 : Bannière minimaliste avec médaillon */}
+                  <div className="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-100 flex flex-col sm:flex-row gap-6 items-center my-8">
+                     <img src="/img6.JPG" alt="Rendu de maquette" className="w-full sm:w-1/3 h-40 object-cover rounded-2xl shadow-sm" />
+                     <div className="space-y-2">
+                        <p className="text-slate-900 font-bold text-lg">Apprendre par la pratique</p>
+                        <p className="text-slate-600 text-sm leading-relaxed">
+                           Grâce aux exercices guidés et aux lives interactifs, développez en toute flexibilité les réflexes créatifs et techniques attendus par les jurys.
+                        </p>
+                     </div>
+                  </div>
+
                   <div id="bases-techniques" className="scroll-mt-24 relative pl-6 border-l-4 border-slate-200 hover:border-[color:var(--color-accent,orange)] transition-colors">
                     <h3 className="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2"><PenTool size={24} className="text-slate-400" /> Acquérir les bases techniques indispensables</h3>
                     <p className="mb-3">S’il est possible d’intégrer une école d’architecture sans bagage technique et d’y réussir, de solides bases techniques restent un atout majeur pour exceller. En première année à l’ENSA Belleville, un niveau insuffisant en dessin pénalise de nombreux étudiants, notamment en projet architectural. Nous vous enseignons des méthodes de dessin et d’informatique qui vous rendent autonome pour élever votre niveau.</p>
@@ -280,8 +320,14 @@ export default function PrepaDistancePage() {
                     <p>Les logiciels d’architecture sont aujourd’hui centraux dans la pratique du métier et discriminants à l’embauche. De jeunes diplômés pâtissent d’un niveau insuffisant sur certains outils. Pour faire de l’informatique un atout, nous vous donnons les clés pour vous former efficacement une fois en école ou en cabinet.</p>
                   </div>
 
+                  {/* BREAK VISUEL 5 : Double image encadrant la création du Book */}
+                  <div className="grid sm:grid-cols-2 gap-6 my-8">
+                     <img src="/img7.jpg" alt="Recherche créative" className="w-full h-48 object-cover rounded-2xl shadow-sm" />
+                     <img src="/img8.jpg" alt="Mise en page graphique" className="w-full h-48 object-cover rounded-2xl shadow-sm" />
+                  </div>
+
                   <div className="relative pl-6 border-l-4 border-slate-200 hover:border-[color:var(--color-accent,orange)] transition-colors">
-                    <h3 className="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2"><Image size={24} className="text-slate-400" /> Produire un book de qualité</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2"><ImageIcon size={24} className="text-slate-400" /> Produire un book de qualité</h3>
                     <p className="mb-3">Nous vous enseignons une méthode pour réaliser, en autonomie, un book (portfolio) de travaux personnels de haut niveau. Un bon book est important car :</p>
                     <ul className="list-disc pl-5 space-y-2 mb-3">
                       <li>Il compte parmi les critères d’admission de certaines ENSA et de la quasi-totalité des écoles d’architecture d’intérieur et de design.</li>
@@ -295,6 +341,11 @@ export default function PrepaDistancePage() {
                     <h3 className="text-2xl font-bold text-slate-900 mb-3">Se démarquer par la culture architecturale</h3>
                     <p className="mb-3">Une culture architecturale solide est le meilleur atout pour concevoir des projets personnels, innovants et de qualité. Une série de cours enrichit votre culture rapidement : histoire de l’architecture, analyse de la pensée des grands architectes, observation des bâtiments marquants. Mais le plus important reste la méthode d’acquisition que nous vous inculquons, car se forger une culture riche est un travail de long terme, dépendant de bonnes habitudes prises tôt. Lectures d’ouvrages et de revues spécialisées, visites de musées et d’expositions… Nous vous donnons tous les conseils pour enrichir votre culture tout au long de votre vie d’architecte.</p>
                     <p>Ce bagage culturel, visible dès l’entretien d’admission, démontre aux jurys la maturité de votre projet académique et professionnel.</p>
+                  </div>
+
+                  {/* BREAK VISUEL 6 : Dernière image de conclusion */}
+                  <div className="rounded-3xl overflow-hidden shadow-sm my-8 border border-slate-100">
+                     <img src="/img9.JPG" alt="Préparation de l'oral" className="w-full h-64 object-cover hover:scale-105 transition-transform duration-700" />
                   </div>
 
                 </div>

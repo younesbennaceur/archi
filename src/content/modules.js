@@ -10,7 +10,7 @@ export const modules = [
     short: 'La voie royale vers le diplôme d’État',
     subtitle: "Notre formation phare en immersion totale à Paris. Sur une année complète, préparez sereinement les concours des ENSA et écoles internationales. Au programme : acquisition de bases techniques (dessin, projet, expression plastique, modélisation), constitution d'un book professionnel, entraînements poussés aux oraux, culture architecturale, stratégie d'orientation et un stage en agence d’architecture.",
     price: '6 980 €',
-    cover: 'https://media.routard.com/image/74/7/photo.1405747.w1000.jpg',
+    cover: '1.webp',
   },
   {
     slug: 'prepa-distance',

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Check, MapPin, Calendar, ArrowLeft, ArrowRight, 
-  List, ChevronRight, ChevronDown, Layers, Users, Accessibility, Info, Clock, Monitor
+  Check, MapPin, Calendar, ArrowLeft, ArrowRight, Quote,
+  List, ChevronRight, ChevronDown, Layers, Users, Accessibility, Info, Camera, PenTool, Building, Globe, BookOpen, Lightbulb, Clock, MessageSquare, Image as ImageIcon
 } from 'lucide-react';
 import SEO from '../components/SEO.jsx';
 
@@ -66,14 +66,13 @@ export default function Rhino3DPage() {
     <div className="scroll-smooth">
       <SEO
         title="Formation logiciel 3D Rhino | Devenir Architecte"
-        description="Maîtriser la conception architecturale avec Rhinocéros 3D : modélisation, rendu professionnel et export de projets."
+        description="Maîtriser la conception architecturale avec Rhinocéros 3D : modélisation, rendu professionnel et export de projects."
         path="/services/formation-rhino-3d"
       />
 
-      {/* HERO SECTION */}
-      <section className="relative overflow-hidden bg-slate-900 text-white">
+      {/* HERO SECTION avec l'image CIUP, overlay et Copyright */}
+      <section className="relative overflow-hidden bg-slate-900 text-white pb-12">
         <div className="absolute inset-0 -z-0">
-          {/* Image CIUP avec overlay élégant */}
           <img 
             src="https://www.pariszigzag.fr/wp-content/uploads/2023/11/CITE-UNIVERSITAIRE-3-PARIS-ZIZGAG.jpg" 
             alt="Architecture et Modélisation 3D Rhino - Cité Universitaire" 
@@ -115,6 +114,8 @@ export default function Rhino3DPage() {
             Maîtriser la conception architecturale avec Rhinocéros 3D
           </motion.p>
         </div>
+
+      
       </section>
 
       {/* CONTENU PRINCIPAL */}
@@ -169,7 +170,36 @@ export default function Rhino3DPage() {
                 </ul>
               </nav>
 
+              {/* SECTION: CADRE D'ÉTUDE */}
+              <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col md:flex-row gap-8 items-center">
+                <div className="w-full ">
+                   <h3 className="text-2xl font-black text-slate-900 mb-4 leading-tight">Un cadre d'étude exceptionnel au cœur du 14e arrondissement</h3>
+                   <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                     Notre école est située à proximité immédiate de la <strong>Cité Internationale Universitaire de Paris (CIUP)</strong>. Cet environnement unique offre à nos étudiants un musée d'architecture à ciel ouvert, idéal pour nourrir leur culture architecturale et s'exercer au croquis sur le vif.
+                   </p>
+                   <p className="text-slate-600 text-sm leading-relaxed">
+                     Du Pavillon Suisse de Le Corbusier à la Fondation Avicenne, la diversité des styles architecturaux de la CIUP constitue une source d'inspiration inépuisable tout au long de votre formation.
+                   </p>
+                </div>
+                
+              </div>
+
               <hr className="border-slate-200" />
+
+              {/* BREAK VISUEL 1 : Bannière d'immersion dans la CAO */}
+              <motion.div 
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="relative h-48 rounded-3xl overflow-hidden shadow-md my-8"
+              >
+                <img src="/img2.jpeg" alt="Conception CAO et Modélisation" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-950/70 via-slate-900/40 to-transparent flex items-center px-8 sm:px-12">
+                   <p className="text-white font-black tracking-tight text-xl sm:text-2xl max-w-md leading-snug">
+                      Passez de l'idée à la géométrie complexe avec précision.
+                   </p>
+                </div>
+              </motion.div>
 
               {/* PROGRAMME DÉTAILLÉ */}
               <div id="programme" className="scroll-mt-24 space-y-8">
@@ -184,17 +214,27 @@ export default function Rhino3DPage() {
                     content={`Objectif : A l'issue de ce module le stagiaire sera capable de maîtriser l'interface et les fonctions de base du logiciel pour concevoir une micro-architecture en 3D\n\nChapitre 1 : Maîtriser l'interface du logiciel\nChapitre 2 : Identifier et gérer les différents types de fichiers\nChapitre 3 : Créer et modifier une micro-architecture en 3D\nÉvaluation Module 1`}
                   />
                   <AccordionItem 
-                    title="MODULE 2 : Concevoir le site et le projet architectural (6 heures)"
+                    title="MODULE 2 : Concevoir le site et le project architectural (6 heures)"
                     content={`Objectif : A l'issue de ce module le stagiaire sera capable de maîtriser les outils de conception du site et les éléments fondamentaux de la structure d'un bâtiment\n\nChapitre 1 : Concevoir et modifier les surfaces topographiques\nChapitre 2 : Concevoir les éléments de base du bâtiment\nÉvaluation Module 2`}
                   />
                   <AccordionItem 
-                    title="MODULE 3 : Développer le projet architectural et les détails constructifs (6 heures)"
-                    content={`Objectif : A l'issue de ce module le stagiaire sera capable de développer et détailler le projet architectural pour en assurer la cohérence technique et esthétique\n\nChapitre 1 : Intégrer les typologies et les éléments détaillés\nÉvaluation Module 3`}
+                    title="MODULE 3 : Développer le project architectural et les détails constructifs (6 heures)"
+                    content={`Objectif : A l'issue de ce module le stagiaire sera capable de développer et détailler le project architectural pour en assurer la cohérence technique et esthétique\n\nChapitre 1 : Intégrer les typologies et les éléments détaillés\nÉvaluation Module 3`}
                   />
                   <AccordionItem 
-                    title="MODULE 4 : Analyser les charges et calibrer le projet pour l'exportation (6 heures)"
-                    content={`Objectif : A l'issue de ce module le stagiaire sera capable de préparer un projet en vue de son export vers des logiciels de CAO et de présentation\n\nChapitre 1 : Définir et ajuster les vues du bâtiment\nChapitre 2 : Exporter le projet vers d'autres logiciels\nÉvaluation Module 4`}
+                    title="MODULE 4 : Analyser les charges et calibrer le project pour l'exportation (6 heures)"
+                    content={`Objectif : A l'issue de ce module le stagiaire sera capable de préparer un project en vue de son export vers des logiciels de CAO et de présentation\n\nChapitre 1 : Définir et ajuster les vues du bâtiment\nChapitre 2 : Exporter le project vers d'autres logiciels\nÉvaluation Module 4`}
                   />
+                </div>
+              </div>
+
+              {/* BREAK VISUEL 2 : Grille de 2 images (Modélisation / Maquette numérique) */}
+              <div className="grid sm:grid-cols-2 gap-6 my-10">
+                <div className="rounded-2xl overflow-hidden h-56 shadow-sm border border-slate-100">
+                  <img src="/img3.jpeg" alt="Interface de modélisation" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="rounded-2xl overflow-hidden h-56 shadow-sm border border-slate-100">
+                  <img src="/img4.jpeg" alt="Rendu 3D de structures" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
                 </div>
               </div>
 
@@ -213,7 +253,30 @@ export default function Rhino3DPage() {
                 </div>
               </div>
 
+              {/* BREAK VISUEL 3 : Carte image avec légende superposée */}
+              <div className="relative rounded-3xl overflow-hidden shadow-sm border border-slate-200 my-10">
+                 <img src="/img5.jpg" alt="Formateur guidant un élève" className="w-full h-72 object-cover" />
+                 <div className="absolute bottom-0 inset-x-0 bg-white/90 backdrop-blur-md p-6 border-t border-white/20 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                       <p className="font-bold text-slate-900 text-sm">Un apprentissage encadré par des experts</p>
+                       <p className="text-xs text-slate-600">Des formateurs certifiés pour vous transmettre les meilleures pratiques métiers.</p>
+                    </div>
+                    <span className="text-xs font-bold bg-slate-900 text-white px-3 py-1.5 rounded-lg w-fit">Support dédié</span>
+                 </div>
+              </div>
+
               <hr className="border-slate-200" />
+
+              {/* BREAK VISUEL 4 : Bannière minimaliste */}
+              <div className="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-100 flex flex-col sm:flex-row gap-6 items-center my-8">
+                 <img src="/img6.JPG" alt="Matériel informatique et CAO" className="w-full sm:w-1/3 h-40 object-cover rounded-2xl shadow-sm" />
+                 <div className="space-y-2">
+                    <p className="text-slate-900 font-bold text-lg">Des outils professionnels à disposition</p>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                       Formez-vous sur des postes performants configurés pour le calcul de charges et la fluidité des rendus haute définition.
+                    </p>
+                 </div>
+              </div>
 
               {/* HANDICAP */}
               <div id="handicap" className="scroll-mt-24 space-y-6">
@@ -224,6 +287,12 @@ export default function Rhino3DPage() {
                 <p className="text-slate-700 leading-relaxed mb-6">
                   Toutes les formations dispensées à MONEDUCATION sont accessibles aux personnes en situation de handicap. Lors de l’inscription à nos formations, nous étudions avec le candidat en situation de handicap et à travers un questionnaire les actions que nous pouvons mettre en place pour favoriser son apprentissage. Pour cela, nous pouvons également nous appuyer sur un réseau de partenaires nationaux préalablement identifiés.
                 </p>
+
+                {/* BREAK VISUEL 5 : Double image illustrant l'accessibilité et les espaces */}
+                <div className="grid sm:grid-cols-2 gap-6 my-8">
+                   <img src="/img7.jpg" alt="Espace de formation accessible" className="w-full h-48 object-cover rounded-2xl shadow-sm" />
+                   <img src="/img8.jpg" alt="Accompagnement personnalisé" className="w-full h-48 object-cover rounded-2xl shadow-sm" />
+                </div>
 
                 <p className="font-bold text-slate-900 mb-4">Coordonnées des partenaires handicap :</p>
                 
@@ -257,6 +326,12 @@ export default function Rhino3DPage() {
                     <p className="text-sm text-slate-600">15-17 Avenue de Verdun<br/>93140 Bondy</p>
                   </div>
                 </div>
+
+                {/* BREAK VISUEL 6 : Dernière image pour illustrer la synergie d'équipe */}
+                <div className="rounded-3xl overflow-hidden shadow-sm my-8 border border-slate-100">
+                   <img src="/img9.JPG" alt="Esprit d'école et suivi" className="w-full h-64 object-cover hover:scale-105 transition-transform duration-700" />
+                </div>
+
               </div>
 
             </div>

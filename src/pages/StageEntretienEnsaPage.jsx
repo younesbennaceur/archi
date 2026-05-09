@@ -71,13 +71,13 @@ export default function StageEntretienEnsaPage() {
         path="/services/stage-entretien-ensa"
       />
 
-      {/* HERO SECTION */}
+      {/* HERO SECTION sans crédit photographe */}
       <section className="relative overflow-hidden bg-slate-900 text-white">
         <div className="absolute inset-0 -z-0">
           <img 
             src="/images/cover-entretien-ensa.jpg" 
             alt="Stage Entretien ENSA" 
-            className="h-full w-full object-cover opacity-30" 
+            className="h-full w-full object-cover opacity-30 mix-blend-overlay" 
           />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/60 to-slate-900" />
         </div>
@@ -158,6 +158,20 @@ export default function StageEntretienEnsaPage() {
                 </ul>
               </nav>
 
+              {/* BLOC : L'inspiration architecturale CIUP */}
+              <div className="bg-white border border-slate-200 rounded-3xl p-6 sm:p-8 shadow-sm flex flex-col md:flex-row gap-8 items-center">
+                <div className="w-full ">
+                   <h3 className="text-2xl font-black text-slate-900 mb-4 leading-tight">L'environnement idéal pour une première approche</h3>
+                   <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                     Ce stage d'entretien bénéficie de l'ancrage de notre école dans le 14e arrondissement, à proximité immédiate de la <strong>Cité Internationale Universitaire de Paris</strong>. 
+                   </p>
+                   <p className="text-slate-600 text-sm leading-relaxed">
+                     Ses dizaines de pavillons aux styles architecturaux du monde entier (Fondation Suisse, Collège Néerlandais...) offrent un socle de références incontournable pour enrichir vos réponses et votre culture lors des simulations face au jury.
+                   </p>
+                </div>
+                
+              </div>
+
               {/* PROGRAMME & OBJECTIFS */}
               <div id="objectifs" className="scroll-mt-24 space-y-10">
                 <div>
@@ -174,6 +188,21 @@ export default function StageEntretienEnsaPage() {
                     </p>
                   </div>
                 </div>
+
+                {/* BREAK VISUEL 1 : Bannière pleine largeur pour illustrer l'oral */}
+                <motion.div 
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="relative h-48 rounded-3xl overflow-hidden shadow-md my-8"
+                >
+                  <img src="/img2.jpeg" alt="Préparation de l'entretien d'admission" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-slate-950/70 via-slate-900/40 to-transparent flex items-center px-8 sm:px-12">
+                     <p className="text-white font-black tracking-tight text-xl sm:text-2xl max-w-md leading-snug">
+                        20 minutes pour convaincre. Arrivez face au jury avec des arguments irréprochables.
+                     </p>
+                  </div>
+                </motion.div>
 
                 <div className="space-y-10 text-slate-700 leading-relaxed">
                   
@@ -192,6 +221,16 @@ export default function StageEntretienEnsaPage() {
                     </ul>
                   </div>
 
+                  {/* BREAK VISUEL 2 : Grille de 2 images (Communication et Coaching) */}
+                  <div className="grid sm:grid-cols-2 gap-6 my-10">
+                    <div className="rounded-2xl overflow-hidden h-56 shadow-sm border border-slate-100">
+                      <img src="/img3.jpeg" alt="Coaching de communication" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <div className="rounded-2xl overflow-hidden h-56 shadow-sm border border-slate-100">
+                      <img src="/img4.jpeg" alt="Simulations orales" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                    </div>
+                  </div>
+
                   <div className="relative pl-6 border-l-4 border-slate-200 hover:border-[color:var(--color-accent,orange)] transition-colors">
                     <h3 className="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2"><Users size={24} className="text-slate-400" /> Une formation conçue par des architectes et des experts en communication</h3>
                     <p>Notre programme mêle culture architecturale et techniques d’expression orale pour une préparation à 360° de l’entretien. Il se déroule sur deux jours, totalisant 13 heures de formation en ligne : 4 heures de vidéos et supports PDF, et 9 heures de cours en direct avec un coach architecte spécialisé.</p>
@@ -206,7 +245,7 @@ export default function StageEntretienEnsaPage() {
                 <div className="mt-8">
                   <AccordionItem 
                     title="Jour 1 – Développer une culture architecturale solide"
-                    content={`• Matin : posture de l’architecte, culture architecturale, cultiver sa passion, habitudes quotidiennes, maîtriser son sujet, gérer le stress.\n\n• Après-midi : analyse de projet, commentaire d’image, repères historiques et théoriques, actualité du secteur pour montrer que vous suivez les tendances.`}
+                    content={`• Matin : posture de l’architecte, culture architecturale, cultiver sa passion, habitudes quotidiennes, maîtriser son sujet, gérer le stress.\n\n• Après-midi : analyse de project, commentaire d’image, repères historiques et théoriques, actualité du secteur pour montrer que vous suivez les tendances.`}
                   />
                   <AccordionItem 
                     title="Jour 2 – Gagner en aisance et en impact à l’oral"
@@ -215,10 +254,33 @@ export default function StageEntretienEnsaPage() {
                 </div>
               </div>
 
+              {/* BREAK VISUEL 3 : Carte image avec légende superposée */}
+              <div className="relative rounded-3xl overflow-hidden shadow-sm border border-slate-200 my-10">
+                 <img src="/img5.jpg" alt="Étudiant en simulation" className="w-full h-72 object-cover" />
+                 <div className="absolute bottom-0 inset-x-0 bg-white/90 backdrop-blur-md p-6 border-t border-white/20 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div>
+                       <p className="font-bold text-slate-900 text-sm">Gérez le stress et imposez votre posture</p>
+                       <p className="text-xs text-slate-600">Des entraînements répétés pour désamorcer les questions pièges.</p>
+                    </div>
+                    <span className="text-xs font-bold bg-slate-900 text-white px-3 py-1.5 rounded-lg w-fit">Simulations intensives</span>
+                 </div>
+              </div>
+
               <div className="space-y-10 text-slate-700 leading-relaxed">
                 <div className="relative pl-6 border-l-4 border-slate-200 hover:border-[color:var(--color-accent,orange)] transition-colors">
                   <h3 className="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2"><Globe size={24} className="text-slate-400" /> Pour toutes les écoles d’architecture, en France comme à l’étranger</h3>
                   <p>Nous vous préparons aux entretiens d’admission pour intégrer les Écoles Nationales Supérieures d’Architecture (ENSA), les écoles privées comme l’ESA Paris, l’INSA Strasbourg, ainsi que de très nombreuses écoles étrangères de qualité (Angleterre, Suisse, Allemagne, Canada, Japon…). Ces dernières, souvent en tête des classements mondiaux, offrent des opportunités professionnelles exceptionnelles grâce à la qualité de leur formation et à leur réseau d’anciens. Le contenu de notre formation est universel et s’applique à tous les entretiens d’admission en architecture à travers le monde. Une précision : le stage étant dispensé en français, une maîtrise de cette langue est nécessaire pour suivre l’intégralité des cours.</p>
+                </div>
+
+                {/* BREAK VISUEL 4 : Bannière minimaliste avec médaillon */}
+                <div className="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-100 flex flex-col sm:flex-row gap-6 items-center my-8">
+                   <img src="/img6.JPG" alt="Analyse d'œuvres architecturales" className="w-full sm:w-1/3 h-40 object-cover rounded-2xl shadow-sm" />
+                   <div className="space-y-2">
+                      <p className="text-slate-900 font-bold text-lg">Maîtrisez le commentaire d'image</p>
+                      <p className="text-slate-600 text-sm leading-relaxed">
+                         Apprenez à décrypter instantanément la lumière, l'échelle et les intentions d'un bâtiment à partir d'une simple photographie.
+                      </p>
+                   </div>
                 </div>
 
                 <div className="relative pl-6 border-l-4 border-slate-200 hover:border-[color:var(--color-accent,orange)] transition-colors">
@@ -226,9 +288,20 @@ export default function StageEntretienEnsaPage() {
                   <p>Dans la plupart des entretiens, le jury vous demandera de commenter une œuvre – illustration, photographie, parfois deux à comparer – après seulement cinq minutes de préparation. Il faut donc être rapide et structuré. Nous vous transmettons une méthodologie complète pour analyser toute image, identifier ce qui doit être observé et dit, et organiser votre commentaire de manière fluide et cohérente.</p>
                 </div>
 
+                {/* BREAK VISUEL 5 : Double image encadrant l'expression orale */}
+                <div className="grid sm:grid-cols-2 gap-6 my-8">
+                   <img src="/img7.jpg" alt="Prise de parole et éloquence" className="w-full h-48 object-cover rounded-2xl shadow-sm" />
+                   <img src="/img8.jpg" alt="Débriefing avec les coachs" className="w-full h-48 object-cover rounded-2xl shadow-sm" />
+                </div>
+
                 <div className="relative pl-6 border-l-4 border-slate-200 hover:border-[color:var(--color-accent,orange)] transition-colors">
                   <h3 className="text-2xl font-bold text-slate-900 mb-3 flex items-center gap-2"><Mic size={24} className="text-slate-400" /> Apprenez à bien parler de vous</h3>
                   <p>Parler de soi est un exercice redoutable. Le jury évalue avant tout votre motivation : votre parcours et votre histoire doivent transmettre votre enthousiasme pour les études d’architecture. Nos coachs vous apprennent à créer un storytelling personnel percutant, à sélectionner les bons éléments à délivrer le jour J et à valoriser votre goût pour l’architecture.</p>
+                </div>
+
+                {/* BREAK VISUEL 6 : Dernière image pour illustrer la réussite finale */}
+                <div className="rounded-3xl overflow-hidden shadow-sm my-8 border border-slate-100">
+                   <img src="/img9.JPG" alt="Candidat confiant après son oral" className="w-full h-64 object-cover hover:scale-105 transition-transform duration-700" />
                 </div>
               </div>
 
